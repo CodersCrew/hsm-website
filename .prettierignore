@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.next/
+.yarn/
+next-env.d.ts
+README.md
+
