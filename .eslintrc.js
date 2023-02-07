@@ -21,7 +21,6 @@ module.exports = {
         'plugin:import/typescript',
         'prettier',
     ],
-
     rules: {
         'react/react-in-jsx-scope': 'off',
         'react/jsx-props-no-spreading': 'off',

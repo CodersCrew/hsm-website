@@ -1,0 +1,4 @@
+{
+    "extends": "ec0lint-style-config-recommended",
+    "customSyntax": "@stylelint/postcss-css-in-js"
+}
