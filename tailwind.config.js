@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: ['./src/**/*.{js,ts,jsx,tsx}'],
+    content: ['./src/**/*.{js,ts,jsx,tsx}', '!./node_modules'],
     theme: {
         colors: {
             'neutral/10': '#FFFFFF',
@@ -18,7 +18,11 @@ module.exports = {
             'secondary/60': '#8FBF26',
             'secondary/100': '#445B12',
         },
-        extend: {},
+        extend: {
+            borderRadius: {
+                20: '20px',
+            },
+        },
     },
     plugins: [],
 };
