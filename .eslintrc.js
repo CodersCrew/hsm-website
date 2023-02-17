@@ -21,11 +21,11 @@ module.exports = {
         'plugin:import/typescript',
         'prettier',
     ],
-
     rules: {
         'react/react-in-jsx-scope': 'off',
         'react/jsx-props-no-spreading': 'off',
         'import/no-unresolved': 'off',
+        'react/button-has-type': 'off',
         'simple-import-sort/imports': 'error',
         'simple-import-sort/exports': 'error',
     },

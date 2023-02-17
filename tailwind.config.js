@@ -18,7 +18,11 @@ module.exports = {
             'secondary/60': '#8FBF26',
             'secondary/100': '#445B12',
         },
-        extend: {},
+        extend: {
+            borderRadius: {
+                20: '20px',
+            },
+        },
     },
     plugins: [],
 };
