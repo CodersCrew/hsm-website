@@ -9,7 +9,7 @@
       "lint": "prettier --write . && next lint --fix",
       "postinstall": "husky install",
       "prepare": "husky install"
-    }
+    },
     "dependencies": {
       "@next/font": "^13.1.6",
       "@types/node": "18.11.18",
