@@ -1,8 +1,7 @@
 Closes #`<Replace with task number>`
 
+## Changes:
 
-## Changes: 
 -
-
 
 ## Screenshots
