@@ -9,7 +9,7 @@ module.exports = {
         project: TSCONFIG_PROJECTS,
         tsconfigRootDir: __dirname,
     },
-    plugins: ['@typescript-eslint', 'simple-import-sort'],
+    plugins: ['@typescript-eslint', 'simple-import-sort', 'import'],
     extends: [
         'next/core-web-vitals',
         'eslint:recommended',
@@ -22,12 +22,20 @@ module.exports = {
         'prettier',
     ],
     rules: {
-        'react/react-in-jsx-scope': 'off',
-        'react/jsx-props-no-spreading': 'off',
-        'import/no-unresolved': 'off',
-        'react/button-has-type': 'off',
-        'simple-import-sort/imports': 'error',
-        'simple-import-sort/exports': 'error',
+      'react/react-in-jsx-scope': 'off',
+      'react/jsx-props-no-spreading': 'off',
+      'import/no-unresolved': 'off',
+      'react/button-has-type': 'off',
+      'simple-import-sort/imports': 'error',
+      'simple-import-sort/exports': 'error',
+      'import/prefer-default-export': 'off',
+      'react/function-component-definition': [
+        2,
+        {
+          namedComponents: ['arrow-function'],
+          unnamedComponents: 'arrow-function',
+        },
+      ],
     },
     settings: {
         react: {
@@ -37,6 +45,7 @@ module.exports = {
             node: {
                 paths: ['src'],
                 extensions: ['.js', '.jsx', '.ts', '.tsx'],
+                moduleDirectory: ['src', 'node_modules'],
             },
         },
     },
