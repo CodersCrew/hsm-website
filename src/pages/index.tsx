@@ -1,5 +1,7 @@
 import Head from 'next/head';
 
+import { HeaderHomePage } from '@/containers';
+
 const Home = () => (
   <>
     <Head>
@@ -9,7 +11,7 @@ const Home = () => (
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <main>
-      <h1 className="text-2xl">Hello HSM!</h1>
+      <HeaderHomePage />
     </main>
   </>
 );
