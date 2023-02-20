@@ -1,1 +1,2 @@
-export * from './HeaderHomePage'
+export * from './HeaderHomePage';
+export * from './WhoWeAreHomePage';

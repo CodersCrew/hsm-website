@@ -1,23 +1,23 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { Button } from '@/components';
 
-import HeaderImage from '../../common/assets/homePage/header.jpg';
 import Arrow from '../../common/assets/homePage/arrow.png';
-import Link from 'next/link';
+import HeaderImage from '../../common/assets/homePage/header.jpg';
 
 export const HeaderHomePage = () => (
   <section className="relative mx-auto max-h-[961px] max-w-[1440px]">
     <Image src={HeaderImage} width={1440} height={961} alt="Ludzie na spotkaniu" />
     <div className=" justify-end from-black/70 via-black/20 to-black/0 px-4 md:absolute md:bottom-[0] md:flex md:h-full md:w-full md:flex-col md:bg-gradient-to-t md:px-14 md:text-neutral/20 lg:px-[120px]">
-      <h1 className="my-6 text-[26px] font-semibold text-neutral/90 md:text-[44px] md:text-neutral/20">
+      <h1 className="my-6 text-2xl font-semibold text-neutral/90 md:text-4xl md:text-neutral/20">
         Humanizacja Środowiska Miejskiego
       </h1>
-      <p className="text-base font-normal md:text-[18px]">
+      <p className="text-base tracking-wider md:text-[18px]">
         Koło Naukowe zostało złożone w 2007 roku przez prof. Zbigniewa Bacia – opiekuna Koła i Jerzego Łątkę- studenta
         Wydziału Architektury.
       </p>
-      <p className="mb-12 text-base font-normal md:text-[18px]">
+      <p className="mb-12 text-base font-normal tracking-wider md:text-[18px]">
         Celem Koła jest sprowokowanie twórczej postawy w projektowaniu, badanie relacji człowiek- środowisko a także
         korelacji natura- kultura. Istotą KN HŚM jest propagowanie społecznego, zhumanizowanego podejścia do
         architektury i wszystkich dziedzin z nią związanych.

@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-import { HeaderHomePage } from '@/containers';
+import { HeaderHomePage, WhoWeAreHomePage } from '@/containers';
 
 const Home = () => (
   <>
@@ -12,6 +12,7 @@ const Home = () => (
     </Head>
     <main>
       <HeaderHomePage />
+      <WhoWeAreHomePage/>
     </main>
   </>
 );

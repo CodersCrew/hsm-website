@@ -2,11 +2,14 @@ import '@/styles/globals.css';
 
 import type { AppProps } from 'next/app';
 
+import fontLato from '@/fonts/lato';
 import { Layout } from '@/layouts';
 
 const App = ({ Component, pageProps }: AppProps) => (
   <Layout>
-    <Component {...pageProps} />
+    <main className={fontLato.className}>
+      <Component {...pageProps} />
+    </main>
   </Layout>
 );
 
