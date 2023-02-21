@@ -21,7 +21,7 @@ const imagesData = [
 export const WhoWeAreHomePage = () => (
   <section className="mt-[94px]">
     <div className="flex">
-      <div>
+      <div className="mx-4">
         <div>
           <h2 className="pb-5 text-[28px] font-semibold text-neutral/90">Kim jesteśmy?</h2>
           <p className="text-[18px] tracking-wide">
@@ -31,7 +31,7 @@ export const WhoWeAreHomePage = () => (
             związanych.
           </p>
         </div>
-        <div className="flex flex-wrap justify-between">
+        <div className="mt-12 flex flex-wrap justify-between">
           {imagesData.map((image) => (
             <ImagesContainer key={image.altSrc} src={image.src} altSrc={image.altSrc} content={image.content} />
           ))}

@@ -27,17 +27,20 @@ export const Navbar = () => {
   }, [open]);
 
   return (
-    <nav className="sticky top-0 z-10 m-auto mb-3 flex w-full max-w-7xl flex-col bg-neutral/10 md:flex-row md:justify-between">
-      <Logo>
+    <nav className="sticky top-0 z-10 w-full bg-neutral/10 pb-2">
+      <div className='flex flex-col md:flex-row md:justify-between max-w-7xl mx-auto'>
+        <Logo>
         <BurgerMenu toggleNav={toggleNav} BurgerMenuSrc={BurgerMenuSrc} />
       </Logo>
       <ul
-        className={` fixed top-[56px] z-10 flex h-[calc(100vh_-_56px)] w-full flex-col items-center space-y-4 bg-neutral/10 pt-3 transition-transform ${toggleClassNav} text-[16px] md:static  md:h-[56px] md:w-auto md:transform-none md:flex-row md:items-center md:gap-x-4 md:space-y-0 md:pr-4 lg:gap-8`}
+        className={`fixed top-[56px] z-10 flex h-full w-full flex-col items-center space-y-4 bg-neutral/10 pt-3 transition-transform ${toggleClassNav} text-[16px] md:static  md:h-[56px] md:w-auto md:transform-none md:flex-row md:items-center md:gap-x-4 md:space-y-0 md:pr-4 lg:gap-8`}
       >
         {NavItems.map((item) => (
           <NavItem navItem={item.navItem} navItemSrc={item.navSrc} key={item.id} />
         ))}
       </ul>
+      </div>
+      
     </nav>
   );
 };
