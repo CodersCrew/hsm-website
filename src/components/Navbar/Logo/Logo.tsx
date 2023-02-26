@@ -1,15 +1,11 @@
 /* eslint-disable arrow-body-style */
 import Image from 'next/image';
 import Link from 'next/link';
-import { ReactNode } from 'react';
+import React, { PropsWithChildren } from 'react';
 
-import HSMLogo from '../../common/assets/navbar/hsm-logo.png';
+import HSMLogo from '@/common/assets/navbar/hsm-logo.png';
 
-type LogoProps = {
-  children: ReactNode;
-};
-
-const Logo = ({ children }: LogoProps) => {
+export const Logo: React.FC<PropsWithChildren> = ({ children }) => {
   return (
     <div className="flex h-[56px] justify-between py-2 pl-4">
       <Link href="/">
@@ -33,5 +29,3 @@ const Logo = ({ children }: LogoProps) => {
     </div>
   );
 };
-
-export default Logo;

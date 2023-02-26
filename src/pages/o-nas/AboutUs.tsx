@@ -8,7 +8,7 @@ import LinkButton from '@/components/LinkButton';
 import { useWindowSize } from '@/hooks/use-window-size';
 
 import { aboutUsText as texts } from '../../texts/about-us';
-import { boardTeamImagesData } from './board-team.constant';
+import { boardTeamImagesData } from '../../constants/o-nas';
 
 const AboutUsPage = () => {
   const { windowWidth } = useWindowSize();
@@ -16,8 +16,14 @@ const AboutUsPage = () => {
   return (
     <div>
       <section className="flex-row items-center bg-primary/90 md:flex md:flex-row-reverse">
-        <Image src="/images/about-us/team.png" width={700} height={500} alt="ekipa hsm" className="w-full md:w-5/12" />
-        <div className="align-center relative z-10 px-4 pb-8 pt-10 text-base text-neutral/20 md:text-lg lg:pl-20 lg:pr-24 lg:text-2xl">
+        <Image
+          src="/images/about-us/team.png"
+          width={700}
+          height={500}
+          alt="ekipa hsm"
+          className="w-full md:min-w-[3/4]"
+        />
+        <div className="align-center px-4 pb-8 pt-10 text-base text-neutral/20 md:text-lg lg:pl-20 lg:pr-24 lg:text-2xl">
           <h1 className="text-neutral/100 mb-4 text-3xl font-bold lg:text-5xl">{texts.hero.title}</h1>
           <p className="leading-7">{texts.hero.content}</p>
         </div>
@@ -38,7 +44,7 @@ const AboutUsPage = () => {
             {boardTeamImagesData.map((image) => (
               <SwiperSlide key={image.id} zoom>
                 <div className="relative">
-                  <Image src={image.src} width={192} height={312} alt={image.alt} className="h-full w-full" />
+                  <Image src={image.src} width={192} height={312} alt={image.alt} />
                   <div
                     className={`absolute bottom-0 text-center font-bold text-neutral/20 ${image.background} w-full rounded-[7px] md:py-2 md:text-sm`}
                   >
