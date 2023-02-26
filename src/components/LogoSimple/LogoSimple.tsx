@@ -4,7 +4,7 @@ import Link from 'next/link';
 import HSMLogo from '@/common/assets/navbar/hsm-logo.png';
 
 export const LogoSimple = () => (
-  <div className="flex h-[56px] justify-between py-2 pl-4">
+  <div className="flex h-[56px] justify-between pl-4">
     <Link href="/">
       <div className="flex">
         <Image
