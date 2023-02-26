@@ -1,11 +1,8 @@
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 
-type BurgerMenuProps = {
-  toggleNav: () => void;
-  BurgerMenuSrc: StaticImageData | string;
-};
+import { BurgerMenuProps } from './BurgerMenu.types';
 
-const BurgerMenu = ({ toggleNav, BurgerMenuSrc }: BurgerMenuProps) => (
+export const BurgerMenu = ({ toggleNav, BurgerMenuSrc }: BurgerMenuProps) => (
   <div onClick={toggleNav} onKeyUp={toggleNav} role="button" tabIndex={0} className="mr-5 p-4">
     <Image
       src={BurgerMenuSrc}
@@ -16,5 +13,3 @@ const BurgerMenu = ({ toggleNav, BurgerMenuSrc }: BurgerMenuProps) => (
     />
   </div>
 );
-
-export default BurgerMenu;
