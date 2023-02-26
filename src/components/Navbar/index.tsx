@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
-import BurgerMenuSrc from '../../common/assets/navbar/burger-menu.png';
+import BurgerMenuSrc from '@/common/assets/navbar/burger-menu.png';
+
 import BurgerMenu from './BurgerMenu';
 import Logo from './Logo';
 import NavItem from './NavItem';

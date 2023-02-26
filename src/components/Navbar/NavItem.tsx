@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-type NavItemsProps = {
+export type NavItemsProps = {
   navItemSrc: string;
   navItem: string;
 };
