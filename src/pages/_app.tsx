@@ -2,14 +2,15 @@ import '@/styles/globals.css';
 
 import type { AppProps } from 'next/app';
 
-import { Navbar } from '@/components';
 import fontLato from '@/fonts/lato';
+import { Layout } from '@/layouts';
 
 const App = ({ Component, pageProps }: AppProps) => (
-  <main className={fontLato.className}>
-    <Navbar />
-    <Component {...pageProps} />
-  </main>
+  <Layout>
+    <main className={fontLato.className}>
+      <Component {...pageProps} />
+    </main>
+  </Layout>
 );
 
 export default App;
