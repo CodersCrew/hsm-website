@@ -8,7 +8,7 @@ import ArrowIcon from '@/common/assets/icons/arrow.svg';
 
 function ContactPage() {
   return (
-    <section className="mx-9">
+    <section className="mx-auto max-w-7xl px-9">
       <div className="my-16 flex justify-between">
         <div className="space-y-2">
           <h2>Adres</h2>
