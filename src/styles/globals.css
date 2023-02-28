@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+h2 {
+  @apply text-2xl lg:text-4xl my-2
+}
