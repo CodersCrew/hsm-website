@@ -15,12 +15,16 @@ export const Navbar = () => {
   const toggleClassNav = open ? 'translate-x-0' : 'translate-x-full';
 
   return (
-    <nav className="m-auto flex w-full max-w-7xl flex-col md:flex-row md:justify-between">
+    <nav className="flex w-full max-w-7xl flex-col md:flex-row md:justify-between">
       <Logo>
         <BurgerMenu toggleNav={toggleNav} BurgerMenuSrc={BurgerMenuSrc} />
       </Logo>
       <ul
-        className={`fixed top-[56px] z-10 flex h-full w-full flex-col items-center space-y-4 bg-neutral/10 pt-3 transition-transform ${toggleClassNav} text-[16px] md:static md:h-[56px] md:w-auto md:transform-none md:flex-row md:items-center md:gap-x-4 md:space-y-0 md:pr-4 lg:gap-8`}
+        className={`
+          fixed top-[60px] z-10 flex h-full w-full flex-col 
+          items-center space-y-4 bg-neutral/10 pt-3 transition-transform ${toggleClassNav} 
+          md:static md:w-auto md:transform-none md:flex-row md:items-center 
+          md:gap-x-4 md:space-y-0 md:pr-4 lg:gap-8`}
       >
         {NAV_ITEMS.map((item) => {
           const { navItemName, navItemSrc, id } = item;

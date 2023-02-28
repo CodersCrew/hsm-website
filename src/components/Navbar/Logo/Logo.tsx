@@ -7,7 +7,7 @@ import HSMLogo from '@/common/assets/navbar/hsm-logo.png';
 
 export const Logo: React.FC<PropsWithChildren> = ({ children }) => {
   return (
-    <div className="flex h-[56px] justify-between py-2 pl-4">
+    <div className="flex justify-between py-2 pl-4">
       <Link href="/">
         <div className="flex">
           <Image
