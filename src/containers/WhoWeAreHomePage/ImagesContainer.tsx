@@ -9,7 +9,7 @@ type ImageContainerProps = {
 const ImagesContainer = ({ src, altSrc, content }: ImageContainerProps) => (
   <div className="flex max-w-[145px] flex-col">
     <Image src={src} alt={altSrc} height={100} width={160} />
-    <p className="text-center">{content}</p>
+    <p className="mt-3 text-center">{content}</p>
   </div>
 );
 

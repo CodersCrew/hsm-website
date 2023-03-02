@@ -6,7 +6,7 @@ import { ReactNode } from 'react';
 import HSMLogo from '../../common/assets/navbar/hsm-logo.png';
 
 type LogoProps = {
-  children: ReactNode;
+  children?: ReactNode;
 };
 
 const Logo = ({ children }: LogoProps) => {

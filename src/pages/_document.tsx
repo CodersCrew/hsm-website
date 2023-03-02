@@ -3,8 +3,10 @@ import { Head, Html, Main, NextScript } from 'next/document';
 const Document = () => (
   <Html lang="en">
     <Head />
-    <Main />
-    <NextScript />
+    <body className="bg-neutral/20">
+      <Main />
+      <NextScript />
+    </body>
   </Html>
 );
 

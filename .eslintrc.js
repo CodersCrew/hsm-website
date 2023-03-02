@@ -26,6 +26,7 @@ module.exports = {
     'react/jsx-props-no-spreading': 'off',
     'import/no-unresolved': 'off',
     'react/button-has-type': 'off',
+    'react/require-default-props': 'off',
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',
     'import/prefer-default-export': 'off',
