@@ -3,10 +3,10 @@ import Link from 'next/link';
 
 import { Button } from '@/components';
 
-import Arrow from '../../common/assets/homePage/arrow.png';
-import HeaderImage from '../../common/assets/homePage/header.jpg';
+import Arrow from '../../../common/assets/homePage/arrow.png';
+import HeaderImage from '../../../common/assets/homePage/header.jpg';
 
-export const HeaderHomePage = () => (
+export const Header = () => (
   <section className="relative mx-auto max-h-[961px] max-w-[1440px]">
     <Image src={HeaderImage} height={1000} width={1840} className="w-full object-cover" alt="Ludzie na spotkaniu" />
     <div className="justify-end from-black/70 via-black/20 to-black/0 px-4 md:absolute md:bottom-[0] md:flex md:h-full md:w-full md:flex-col md:bg-gradient-to-t md:text-neutral/20 lg:px-14 xl:px-[120px]">

@@ -1,12 +1,8 @@
-import { ReactNode } from 'react';
+import { PropsWithChildren } from 'react';
 
 import { Navbar } from '@/components';
 
-type LayoutProps = {
-  children: ReactNode;
-};
-
-export const Layout = ({ children }: LayoutProps) => (
+export const Layout = ({ children }: PropsWithChildren) => (
   <>
     <Navbar />
     {children}

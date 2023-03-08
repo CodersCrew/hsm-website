@@ -2,10 +2,10 @@ import Image from 'next/image';
 
 import { Button } from '@/components';
 
-import Rectangle from '../../common/assets/homePage/Rectangle 54.png';
-import PartnershipImage from '../../common/assets/homePage/unsplash_9cd8qOgeNIY.png';
+import Rectangle from '../../../common/assets/homePage/Rectangle 54.png';
+import PartnershipImage from '../../../common/assets/homePage/unsplash_9cd8qOgeNIY.png';
 
-export const PartnershipHomePage = () => (
+export const Partnership = () => (
   <section className="mx-auto mt-20 flex max-w-[1200px] flex-col">
     <div className="flex flex-col items-center lg:flex-row lg:px-14 xl:px-0">
       <div>

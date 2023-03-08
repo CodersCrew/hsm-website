@@ -1,12 +1,6 @@
 import Head from 'next/head';
 
-import {
-  FormatE1HomePage,
-  HeaderHomePage,
-  PartnershipHomePage,
-  ProjectsHomePage,
-  WhoWeAreHomePage,
-} from '@/containers';
+import { FormatE1, Header, Partnership, Projects, WhoWeAre } from '@/containers/HomePage';
 
 const Home = () => (
   <>
@@ -16,11 +10,11 @@ const Home = () => (
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="icon" href="/favicon.ico" />
     </Head>
-    <HeaderHomePage />
-    <WhoWeAreHomePage />
-    <ProjectsHomePage />
-    <FormatE1HomePage />
-    <PartnershipHomePage />
+    <Header />
+    <WhoWeAre />
+    <Projects />
+    <FormatE1 />
+    <Partnership />
   </>
 );
 

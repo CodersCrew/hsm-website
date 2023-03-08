@@ -1,13 +1,13 @@
 import Image from 'next/image';
 
-import PeopleInOffice from '../../common/assets/homePage/people-in-office.png';
-import Quotes from '../../common/assets/homePage/quotes.png';
-import UndrawAbstract from '../../common/assets/homePage/undraw_abstract_re_l9xy 1.png';
-import UndrawBuild from '../../common/assets/homePage/undraw_build_your__home_csh6 1.png';
-import UndrawBuilding from '../../common/assets/homePage/undraw_building_blocks_re_5ahy 1.png';
-import UndrawEnvironment from '../../common/assets/homePage/undraw_environment_iaus 1.png';
-import UndrawUnder from '../../common/assets/homePage/undraw_under_construction_-46-pa 1.png';
-import UndrawUrban from '../../common/assets/homePage/undraw_urban_design_kpu8 1.png';
+import PeopleInOffice from '../../../common/assets/homePage/people-in-office.png';
+import Quotes from '../../../common/assets/homePage/quotes.png';
+import UndrawAbstract from '../../../common/assets/homePage/undraw_abstract_re_l9xy 1.png';
+import UndrawBuild from '../../../common/assets/homePage/undraw_build_your__home_csh6 1.png';
+import UndrawBuilding from '../../../common/assets/homePage/undraw_building_blocks_re_5ahy 1.png';
+import UndrawEnvironment from '../../../common/assets/homePage/undraw_environment_iaus 1.png';
+import UndrawUnder from '../../../common/assets/homePage/undraw_under_construction_-46-pa 1.png';
+import UndrawUrban from '../../../common/assets/homePage/undraw_urban_design_kpu8 1.png';
 import ImagesContainer from './ImagesContainer';
 
 const imagesData = [
@@ -19,7 +19,7 @@ const imagesData = [
   { src: UndrawBuild, altSrc: 'Build', content: 'działamy na rzecz lokalnych społeczności' },
 ];
 
-export const WhoWeAreHomePage = () => (
+export const WhoWeAre = () => (
   <section className="mx-auto mt-[94px] xl:max-w-[1200px]  ">
     <div className="mx-4 flex lg:mx-14 xl:mx-0">
       <div className="lg:pr-16 xl:pr-32">

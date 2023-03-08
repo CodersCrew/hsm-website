@@ -1,6 +1,6 @@
 import { Button } from '@/components';
 
-export const FormatE1HomePage = () => (
+export const FormatE1 = () => (
   <section className="mx-auto my-14 max-w-[1200px]">
     <div className="mx-4 grid md:grid-cols-2 lg:mx-14 xl:mx-4">
       <h2 className="self-start pb-5 text-[28px] font-semibold text-neutral/90 md:text-[36px]">Format E1</h2>
