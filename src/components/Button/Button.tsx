@@ -1,6 +1,6 @@
 import { ButtonProps } from './Button.types';
 
-export const Button = ({ kind, text, type = 'submit', className, ...props }: ButtonProps) => (
+export const Button: React.FC<ButtonProps> = ({ kind, type = 'submit', className, children, ...props }) => (
   <button
     type={type}
     className={`
@@ -12,6 +12,6 @@ export const Button = ({ kind, text, type = 'submit', className, ...props }: But
             `}
     {...props}
   >
-    {text}
+    {children}
   </button>
 );
