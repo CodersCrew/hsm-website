@@ -10,6 +10,9 @@ import NumberedIcon from '@/common/assets/icons/numbered_icon.svg';
 import { Button, MainSection, TopSection } from '@/components';
 import { formatE1Image, formatE1Texts as texts } from '@/constants/format-e1';
 
+// TODO:
+// - ONLY MOBILE LAYOUT - IMPLEMENT DESKTOP VERSION
+
 export default function FormatE1Page() {
   return (
     <>
