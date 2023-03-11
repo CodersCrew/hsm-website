@@ -32,7 +32,7 @@ export const PurposeSection = () => {
           </div>
         </div>
         <Image
-          src="/images/format-e1/format-e1-cel.png"
+          src="/images/format-e1/format-e1-ludzie.png"
           width={580}
           height={320}
           alt="Osoby z czasopisma przechodzące na pasach"

@@ -15,7 +15,7 @@ export const Navbar = () => {
   const toggleClassNav = open ? 'translate-x-0' : 'translate-x-full';
 
   return (
-    <nav className="flex w-full max-w-7xl flex-col md:flex-row md:justify-between">
+    <nav className="mx-auto flex w-full max-w-7xl flex-col md:flex-row md:justify-between">
       <Logo>
         <BurgerMenu toggleNav={toggleNav} BurgerMenuSrc={BurgerMenuSrc} />
       </Logo>
