@@ -5,5 +5,5 @@ interface ContainerProps extends PropsWithChildren {
 }
 
 export const MainSection: React.FC<ContainerProps> = ({ children, className }) => {
-  return <section className={`mx-auto max-w-screen-xl text-base leading-7 ${className}`}>{children}</section>;
+  return <section className={`text-base leading-7 ${className} text-neutral/90`}>{children}</section>;
 };
