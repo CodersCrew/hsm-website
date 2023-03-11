@@ -4,7 +4,7 @@ import Link from 'next/link';
 import FacebookIcon from '@/common/assets/icons/facebook_transparent.svg';
 import InstagramIcon from '@/common/assets/icons/instagram_transparent.svg';
 import MailIcon from '@/common/assets/icons/mail_transparent.svg';
-import ArrowIcon from '@/common/assets/icons/arrow.svg';
+import GreenArrowIcon from '@/common/assets/icons/arrow_green.svg';
 
 function ContactPage() {
   return (
@@ -17,7 +17,7 @@ function ContactPage() {
           <p>Akademik T4 "Czworak"</p>
           <p>Wejście od strony północnej, drzwi nad przedszkolem</p>
           <Link href="" className="flex w-max items-center text-primary/60 lg:hidden">
-            Zobacz na mapie <Image src={ArrowIcon} height={15} width={15} alt="arrow icon" className="my-4 ml-2" />
+            Zobacz na mapie <Image src={GreenArrowIcon} height={15} width={15} alt="arrow icon" className="my-4 ml-2" />
           </Link>
         </div>
         <Image src="/images/kontakt/mapa.png" height={325} width={588} alt="map" className="hidden lg:block" />
