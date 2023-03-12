@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 
 import BurgerMenuSrc from '../../common/assets/navbar/burger-menu.png';
-import BurgerMenu from './BurgerMenu';
-import Logo from './Logo';
-import NavItem from './NavItem';
+import { BurgerMenu } from './BurgerMenu';
+import { Logo } from './Logo';
+import { NavItem } from './NavItem';
 
 const NavItems = [
   { id: 0, navItem: 'O nas', navSrc: '/about' },
@@ -36,7 +36,7 @@ export const Navbar = () => {
           className={`fixed top-[56px] z-10 flex h-full w-full flex-col items-center space-y-4 bg-neutral/10 pt-3 transition-transform ${toggleClassNav} text-[16px] md:static  md:h-[56px] md:w-auto md:transform-none md:flex-row md:items-center md:gap-x-4 md:space-y-0 md:pr-4 lg:gap-8`}
         >
           {NavItems.map((item) => (
-            <NavItem navItem={item.navItem} navItemSrc={item.navSrc} key={item.id} />
+            <NavItem navItemName={item.navItem} navItemSrc={item.navSrc} key={item.id} />
           ))}
         </ul>
       </div>

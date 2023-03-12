@@ -3,11 +3,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { PropsWithChildren } from 'react';
 
-import HSMLogo from '../../common/assets/navbar/hsm-logo.png';
+import HSMLogo from '@/common/assets/navbar/hsm-logo.png';
 
-const Logo = ({ children }: PropsWithChildren) => {
+export const Logo = ({ children }: PropsWithChildren) => {
   return (
-    <div className="flex h-[56px] justify-between py-2 pl-4">
+    <div className="flex justify-between py-2 pl-4">
       <Link href="/">
         <div className="flex">
           <Image
@@ -29,5 +29,3 @@ const Logo = ({ children }: PropsWithChildren) => {
     </div>
   );
 };
-
-export default Logo;
