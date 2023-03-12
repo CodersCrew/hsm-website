@@ -1,11 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import ArrowIcon from '@/common/assets/icons/arrow.svg';
+import GreenArrowIcon from '@/common/assets/icons/arrow_green.svg';
 import FacebookIcon from '@/common/assets/icons/facebook_transparent.svg';
 import InstagramIcon from '@/common/assets/icons/instagram_transparent.svg';
 import MailIcon from '@/common/assets/icons/mail_transparent.svg';
-import GreenArrowIcon from '@/common/assets/icons/arrow_green.svg';
 
 const ContactPage = () => (
   <section className="mx-auto max-w-7xl px-9">

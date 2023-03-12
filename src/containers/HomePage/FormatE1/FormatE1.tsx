@@ -11,7 +11,7 @@ export const FormatE1 = () => (
         carosuel
       </div>
       <div className="mt-7 place-self-center md:place-self-start">
-        <Button kind="primary" text="Poznaj Format" />
+        <Button kind="primary">Poznaj format</Button>
       </div>
     </div>
   </section>
