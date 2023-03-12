@@ -25,9 +25,10 @@ export const Header = () => (
 
       <Button
         kind="primary"
-        text="Dowiedz się więcej"
         className="mx-auto flex h-[44px] items-center rounded-20 border-none text-base md:mx-1 md:mb-12 md:self-start md:bg-neutral/20 md:font-semibold md:text-primary/90"
-      />
+      >
+        Dowiedz się więcej
+      </Button>
       <Link href="/" className="mx-auto mb-3">
         <Image src={Arrow} width={23} height={50} alt="Strzałka do kolejnej sekcji" />
       </Link>
