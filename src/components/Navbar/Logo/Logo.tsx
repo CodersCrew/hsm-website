@@ -1,11 +1,11 @@
 /* eslint-disable arrow-body-style */
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { PropsWithChildren } from 'react';
+import { PropsWithChildren } from 'react';
 
 import HSMLogo from '@/common/assets/navbar/hsm-logo.png';
 
-export const Logo: React.FC<PropsWithChildren> = ({ children }) => {
+export const Logo = ({ children }: PropsWithChildren) => {
   return (
     <div className="flex justify-between py-2 pl-4">
       <Link href="/">

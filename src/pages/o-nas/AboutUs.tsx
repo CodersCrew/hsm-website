@@ -4,12 +4,12 @@ import 'swiper/swiper-bundle.css';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
+import { MainSection, TopSection } from '@/components';
 import LinkButton from '@/components/LinkButton';
 import { useWindowSize } from '@/hooks/use-window-size';
 
-import { TopSection, MainSection } from '@/components';
-import { aboutUsText as texts } from '../../texts/about-us';
 import { boardTeamImagesData } from '../../constants/o-nas';
+import { aboutUsText as texts } from '../../texts/about-us';
 
 const AboutUsPage = () => {
   const { windowWidth } = useWindowSize();
