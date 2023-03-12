@@ -25,7 +25,7 @@ export const Partnership = () => (
           nami zrealizować - jesteśmy otwarci na współpracę! Zapraszamy do kontaktu.
         </p>
         <div className="mt-6">
-          <Button kind="primary" text="Poznaj format" />
+          <Button kind="primary">Poznaj format</Button>
         </div>
       </div>
     </div>

@@ -6,7 +6,9 @@ export const Projects = () => (
       <h2 className="self-start pb-5 text-[28px] font-semibold text-neutral/90 md:text-[36px] ">Projekty</h2>
       <div>carousel</div>
 
-      <Button kind="primary" text="Zobacz więcej" className="" />
+      <Button kind="primary" className="">
+        Zobacz więcej
+      </Button>
     </div>
   </section>
 );
