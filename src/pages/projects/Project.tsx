@@ -1,5 +1,6 @@
 import { TopSection } from '@/components';
-import { projectsImage, projectsTexts } from '@/constants/projects';
+import { ImportantNumbersSection, ProjectPreviewSection, SearchBar } from '@/components/Projects';
+import { projectsImage, projectsTexts } from '@/components/Projects/Projects.utils';
 
 const ProjectPage = () => (
   <div>
@@ -9,6 +10,12 @@ const ProjectPage = () => (
       description={projectsTexts.topSection.paragraph}
     />
     ELo Projects
+    <br />
+    <ImportantNumbersSection />
+    <br />
+    <SearchBar />
+    <br />
+    <ProjectPreviewSection />
   </div>
 );
 
