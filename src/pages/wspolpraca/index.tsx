@@ -42,7 +42,7 @@ const PartnershipPage = () => (
       description="Razem możemy stworzyć coś naprawdę wartościowego. Zobacz nasze poprzednie projekty i sprawdź, dlaczego warto z nami pracować :)"
       image={{
         alt: 'Współpraca w HŚM',
-        src: '/images/wspolpraca/wspolpraca-1-670x260.png',
+        src: '/images/wspolpraca/wspolpraca-1-600x500.png',
       }}
     />
 

@@ -10,15 +10,24 @@ interface TopSectionProps extends PropsWithChildren {
   description: string;
 }
 
+// TODO: Refactor TopSection
+// TODO: Add everything as a children
+
 export const TopSection: React.FC<TopSectionProps> = ({ description, header, image, children }) => (
-  <div className="w-full items-center bg-primary/90 md:flex md:flex-row-reverse">
-    <Image src={image.src} height={500} width={500} alt={image.alt} className="w-full md:max-w-lg" />
-    <div className="mr-auto px-4 pb-8 pt-10 text-neutral/20 md:text-lg lg:px-16 lg:text-2xl">
-      {/* todo: refactor top section */}
-      {/* todo: add everything as a children */}
-      <h1 className="mb-6 text-3xl font-bold lg:text-5xl">{header}</h1>
-      <p className="">{description}</p>
-      {children}
+  <section className="w-full  bg-primary/90">
+    <div className="mx-auto max-w-screen-xl items-center md:flex md:flex-row-reverse">
+      <Image
+        src={image.src}
+        height={500}
+        width={500}
+        alt={image.alt}
+        className="mx-auto h-auto w-full md:max-w-[60%]"
+      />
+      <div className="mr-10 px-4 py-6 text-neutral/20 sm:py-10 md:text-lg lg:text-2xl">
+        <h1 className="mb-6 text-3xl font-bold lg:text-5xl">{header}</h1>
+        <p className="">{description}</p>
+        {children}
+      </div>
     </div>
-  </div>
+  </section>
 );
