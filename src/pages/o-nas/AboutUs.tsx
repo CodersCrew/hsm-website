@@ -22,7 +22,7 @@ const AboutUsPage = () => {
         image={{ src: '/images/about-us/team.png', alt: 'ekipa hsm' }}
       />
 
-      <MainSection>
+      <MainSection className="mx-auto max-w-screen-xl">
         <div className="mb-8 lg:mt-32 lg:flex lg:flex-row lg:px-4">
           <div className="my-5 px-4 lg:mr-12">
             <h2 className="text-neutral/100 mb-5 text-2xl font-bold">{texts.historySection.header}</h2>
