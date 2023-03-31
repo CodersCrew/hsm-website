@@ -24,7 +24,7 @@ export const TopSection: React.FC<TopSectionProps> = ({ description, header, ima
         className="mx-auto h-auto w-full md:max-w-[60%]"
       />
       <div className="mr-10 px-4 py-6 text-neutral/20 sm:py-10 md:text-lg lg:text-2xl">
-        <h1 className="mb-6 text-3xl font-bold lg:text-5xl">{header}</h1>
+        <h1>{header}</h1>
         <p className="">{description}</p>
         {children}
       </div>

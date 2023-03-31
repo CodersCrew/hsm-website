@@ -37,7 +37,7 @@ const JoinUsPage = () => (
       description="Jeśli chcesz razem z nami tworzyć projekty społeczne, badawcze, budować rzeczywiste obiekty i mieć realny wpływ na życie w mieście!"
       image={{ src: '/images/dolacz-do-nas/ekipa-hsm-600x500.png', alt: 'Ekipa HŚM' }}
     >
-      <LinkButton href="/" className="relative my-8 inline-block bg-neutral/10 text-neutral/90">
+      <LinkButton href="/" className="relative my-8 bg-neutral/10 text-neutral/90">
         <span className="z-10">Dołącz do nas</span>
         <div className="absolute top-2 left-2 hidden h-full w-full rounded-20 border-2 border-solid border-neutral/10 md:block" />
       </LinkButton>
