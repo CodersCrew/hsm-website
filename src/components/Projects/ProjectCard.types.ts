@@ -1,6 +1,9 @@
-type ProjectStatus = 'active' | 'archival';
-const ProjectNames = ['test1', 'test2', 'test3'] as const;
-const ProjectHashtags = [
+import { ProjectStatusVariants } from '../StatusTag/StatusTag.types';
+
+const projectNames = ['test1', 'test2', 'test3'] as const;
+export type ProjectNames = (typeof projectNames)[number];
+
+const projectHashtags = [
   'ekologia',
   'wystawa',
   'papier',
@@ -10,12 +13,13 @@ const ProjectHashtags = [
   'wykłady',
   'badania',
 ] as const;
+export type ProjectHashtags = (typeof projectHashtags)[number];
 
 export type ProjectCardType = {
-  name: (typeof ProjectNames)[number];
-  status: ProjectStatus;
+  name: ProjectNames;
+  status: ProjectStatusVariants;
   ifCyclical: boolean;
-  hashtags: (typeof ProjectHashtags)[number][];
+  hashtags: ProjectHashtags[];
   shortDescription: string;
   imageSRC: string;
   alt: string;
