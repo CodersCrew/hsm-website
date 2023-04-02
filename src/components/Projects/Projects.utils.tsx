@@ -1,7 +1,7 @@
 import { ProjectCardType } from './ProjectCard.types';
 
-export const projectsImage = {
-  src: '/images/projects/banner_projekty.png',
+export const projectsBannerImage = {
+  src: '/images/projects/banner_projects.png',
   alt: 'projekty',
 };
 
@@ -18,27 +18,28 @@ export const PROJECTS_ARRAY: ProjectCardType[] = [
     name: 'test1',
     status: 'active',
     ifCyclical: true,
-    hashtags: ['ekologia', 'wystawa', 'prototyp', 'wykłady'],
+    hashtags: ['ekologia', 'wystawa', 'prototyp', 'wykłady', 'badania', 'sztuka', 'badania', 'papier', 'budowa'],
     shortDescription: 'very short description ',
-    imageSRC: projectsImage.src,
+    imageSRC: projectsBannerImage.src,
     alt: 'test1',
   },
   {
-    name: 'test2',
-    status: 'archival',
+    name: 'Chill - Out Architecture',
+    status: 'active',
     ifCyclical: false,
     hashtags: ['wystawa', 'badania', 'sztuka', 'badania'],
-    shortDescription: 'very short description ',
-    imageSRC: projectsImage.src,
+    shortDescription:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus id purus augue. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Lorem ipsum dolor sit amet, consectetur adipiscing elit.  ',
+    imageSRC: '/images/projects/project_ChillOut.png',
     alt: 'test2',
   },
   {
-    name: 'test3',
-    status: 'active',
+    name: 'PPS',
+    status: null,
     ifCyclical: true,
-    hashtags: ['ekologia', 'prototyp', 'wystawa', 'wykłady'],
-    shortDescription: 'very short description ',
-    imageSRC: projectsImage.src,
+    hashtags: ['ekologia', 'prototyp', 'wystawa', 'wykłady', 'papier', 'budowa', 'sztuka', 'badania'],
+    shortDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus id purus augue. ',
+    imageSRC: '/images/projects/project_PPS.png',
     alt: 'test3',
   },
 ];

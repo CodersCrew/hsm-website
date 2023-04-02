@@ -1,25 +1,14 @@
 import { ProjectStatusVariants } from '../StatusTag/StatusTag.types';
+import { HashtagVariant } from './Hashtag/Hashtag.types';
 
-const projectNames = ['test1', 'test2', 'test3'] as const;
+const projectNames = ['test1', 'Chill - Out Architecture', 'PPS'] as const;
 export type ProjectNames = (typeof projectNames)[number];
-
-const projectHashtags = [
-  'ekologia',
-  'wystawa',
-  'papier',
-  'budowa',
-  'prototyp',
-  'sztuka',
-  'wykłady',
-  'badania',
-] as const;
-export type ProjectHashtags = (typeof projectHashtags)[number];
 
 export type ProjectCardType = {
   name: ProjectNames;
-  status: ProjectStatusVariants;
+  status: ProjectStatusVariants | null;
   ifCyclical: boolean;
-  hashtags: ProjectHashtags[];
+  hashtags: HashtagVariant[];
   shortDescription: string;
   imageSRC: string;
   alt: string;

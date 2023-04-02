@@ -6,6 +6,6 @@ export type ProjectStatusVariants = (typeof projectStatus)[number];
 export type StatusIcons = { [key in ProjectStatusVariants | 'cyclical']: string };
 
 export interface StatusProps extends HTMLAttributes<HTMLDivElement> {
-  kind: ProjectStatusVariants;
+  kind: ProjectStatusVariants | null;
   ifCyclical: boolean;
 }
