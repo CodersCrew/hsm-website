@@ -8,6 +8,7 @@ type ProjectCardProps = { data: ProjectCardType & { index: number } };
 
 export const ProjectCard = ({ data }: ProjectCardProps) => {
   const { name, status, ifCyclical, hashtags, shortDescription, imageSRC, alt, index } = data;
+  console.log(index, index % 2, index % 2 ? 'row-reverse' : 'row');
   return (
     <div className={`flex gap-24 px-28 flex-${index % 2 ? 'row-reverse' : 'row'} py-16`}>
       <Image className="flex flex-auto" src={imageSRC} alt={`Project ${alt}`} width={588} height={332} />
@@ -17,8 +18,8 @@ export const ProjectCard = ({ data }: ProjectCardProps) => {
           <StatusTag kind={status} ifCyclical={ifCyclical} />
         </header>
         <div className="flex flex-wrap gap-2 ">
-          {hashtags.map((hashtag) => (
-            <Hashtag variant={hashtag} key={hashtag} />
+          {hashtags.map((hashtag, idx) => (
+            <Hashtag variant={hashtag} key={`${hashtag + idx}`} />
           ))}
         </div>
         <h5 className="py-5 text-neutral/90">{shortDescription}</h5>
