@@ -1,4 +1,4 @@
-import { ProjectCard } from './ProjectCard';
+import { ProjectCard } from './ProjectCard/ProjectCard';
 import { PROJECTS_ARRAY } from './Projects.utils';
 
 export const ProjectPreviewSection = () => (

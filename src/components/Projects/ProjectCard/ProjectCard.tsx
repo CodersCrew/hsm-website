@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
-import { StatusTag } from '../StatusTag';
-import Hashtag from './Hashtag/Hashtag';
+import { StatusTag } from '../../StatusTag';
+import Hashtag from '../Hashtag/Hashtag';
 import { ProjectCardType } from './ProjectCard.types';
 
 type ProjectCardProps = { data: ProjectCardType & { index: number } };

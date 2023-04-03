@@ -1,4 +1,4 @@
-import { ProjectCardType } from './ProjectCard.types';
+import { ProjectCardType } from './ProjectCard/ProjectCard.types';
 
 export const projectsBannerImage = {
   src: '/images/projects/banner_projects.png',
