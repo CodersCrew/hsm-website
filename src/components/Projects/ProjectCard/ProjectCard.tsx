@@ -12,7 +12,7 @@ export const ProjectCard = ({ data }: ProjectCardProps) => {
     <div className={`flex gap-24 px-28 flex-${index % 2 ? 'row-reverse' : 'row'} py-16`}>
       <Image className="flex flex-auto" src={imageSRC} alt={`Project ${alt}`} width={588} height={332} />
       <div className="order-1 flex flex-auto flex-col items-start ">
-        <header className="pb-6">
+        <header className="pb-6 text-neutral/90">
           <h2>{name}</h2>
           <StatusTag kind={status} ifCyclical={ifCyclical} />
         </header>
