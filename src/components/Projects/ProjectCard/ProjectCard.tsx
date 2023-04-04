@@ -26,7 +26,8 @@ export const ProjectCard = ({ data }: ProjectCardProps) => {
 
         <div>
           <button className="flex flex-row items-center gap-1 text-M_regular font-bold leading-M_regular text-primary/90">
-            Zobacz więcej <Image src="/images/projects/arrow_forward.svg" width={20} height={20} alt="arrow icon" />{' '}
+            Zobacz więcej{' '}
+            <Image src="/images/projects/arrow_forward_green.svg" width={20} height={20} alt="arrow icon" />{' '}
           </button>
         </div>
       </div>
