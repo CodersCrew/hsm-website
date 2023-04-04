@@ -15,17 +15,17 @@ export const projectsTexts = {
 
 export const PROJECTS_ARRAY: ProjectCardType[] = [
   {
-    id:1,
-    name: 'test1',
+    id: 1,
+    name: 'BWA - Biuro Wspólnej aktywności',
     status: 'active',
     ifCyclical: true,
-    hashtags: ['ekologia', 'wystawa', 'prototyp', 'wykłady', 'badania', 'sztuka', 'badania', 'papier', 'budowa'],
-    shortDescription: 'very short description ',
-    imageSRC: projectsBannerImage.src,
+    hashtags: ['ekologia', 'wystawa', 'prototyp', 'wykłady', 'badania', 'sztuka', 'papier', 'budowa'],
+    shortDescription: 'BWA to projekt, który powstał w obrębie Wystawy Studia Mistrzyń: Rajkowska - Nagi Nerw.',
+    imageSRC: '/images/projects/project_BWA.png',
     alt: 'test1',
   },
   {
-    id:2,
+    id: 2,
     name: 'Chill - Out Architecture',
     status: 'active',
     ifCyclical: false,
@@ -36,7 +36,7 @@ export const PROJECTS_ARRAY: ProjectCardType[] = [
     alt: 'Chill - Out Architecture',
   },
   {
-    id:3,
+    id: 3,
     name: 'PPS',
     status: null,
     ifCyclical: true,
@@ -46,7 +46,7 @@ export const PROJECTS_ARRAY: ProjectCardType[] = [
     alt: 'PPS',
   },
   {
-    id:4,
+    id: 4,
     name: 'Arch/Box',
     status: 'archival',
     ifCyclical: false,
