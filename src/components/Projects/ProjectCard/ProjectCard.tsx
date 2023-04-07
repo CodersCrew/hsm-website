@@ -14,7 +14,11 @@ export const ProjectCard = ({ data }: ProjectCardProps) => {
       <div className="order-1 flex flex-auto flex-col items-start ">
         <header className="pb-6 text-neutral/90">
           <h2>{name}</h2>
-          <StatusTag kind={status} ifCyclical={ifCyclical} />
+          <StatusTag
+            kind={status}
+            ifCyclical={ifCyclical}
+            className="text-S_regular font-semibold leading-S_regular text-primary/60 "
+          />
         </header>
         <div className="flex flex-wrap gap-2 ">
           {hashtags.map((hashtag, idx) => (

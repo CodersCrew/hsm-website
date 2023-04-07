@@ -1,6 +1,18 @@
 import { HTMLAttributes, PropsWithChildren } from 'react';
 
+import { PaletteColorType } from '../FigmaTheme/FigmaTheme.types';
+
+const buttonVariants = [
+  'primary',
+  'secondary',
+  'toggle',
+  'filter',
+  'filterHashtagOption',
+  'filterStatusOption',
+] as const;
+
 export interface ButtonProps extends HTMLAttributes<HTMLButtonElement>, PropsWithChildren {
-  kind: 'primary' | 'secondary' | 'toggle' | 'filter';
-  type?: 'submit' | 'reset' | 'button';
+  kind: (typeof buttonVariants)[number];
+  borderColor?: PaletteColorType;
+  textColor?: PaletteColorType;
 }
