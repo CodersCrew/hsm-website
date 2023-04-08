@@ -13,6 +13,7 @@ const paletteColors = [
   'secondary/10',
   'secondary/60',
   'secondary/100',
+  'filterDropBckgColor',
   'black',
 ] as const;
 export type PaletteColorType = (typeof paletteColors)[number];

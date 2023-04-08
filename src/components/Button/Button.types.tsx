@@ -7,7 +7,6 @@ const buttonVariants = [
   'secondary',
   'toggle',
   'filter',
-  'filterHashtagOption',
   'filterStatusOption',
 ] as const;
 

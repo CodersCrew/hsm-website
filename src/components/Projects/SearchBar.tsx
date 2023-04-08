@@ -36,7 +36,9 @@ export const SearchBar = () => {
         </Button>
         <div className="dropdownContainer absolute -right-1/4">
           {isDropdownVisible ? (
-            <div className="m-6 flex w-filterDropdown flex-col gap-12 rounded-2xl bg-neutral/40 p-16">
+            <div
+              className={`m-6 flex w-filterDropdown flex-col gap-12 rounded-2xl bg-${PALETTE_COLORS.filterDropBckgColor} p-16`}
+            >
               <div className="searchByStatusContainer flex flex-row items-start justify-between ">
                 <div className="flex flex-col gap-6">
                   <h4>Status projektu</h4>
@@ -44,7 +46,12 @@ export const SearchBar = () => {
                     {projectStatusesList.map((projectStatus) => {
                       if (projectStatus !== 'cyclical')
                         return (
-                          <Button kind="filterStatusOption" key={projectStatus} textColor="neutral/90">
+                          <Button
+                            kind="filterStatusOption"
+                            key={projectStatus}
+                            textColor="neutral/90"
+                            className="flex items-center justify-center"
+                          >
                             <StatusTag
                               kind={projectStatus}
                               ifCyclical={false}
@@ -53,7 +60,11 @@ export const SearchBar = () => {
                           </Button>
                         );
                       return (
-                        <Button kind="filterStatusOption" key={projectStatus}>
+                        <Button
+                          kind="filterStatusOption"
+                          borderColor={`${PALETTE_COLORS['primary/20']}`}
+                          key={projectStatus}
+                        >
                           <StatusTag ifCyclical className="text-M_regular font-semibold leading-M_regular" />
                         </Button>
                       );
@@ -68,8 +79,7 @@ export const SearchBar = () => {
                   {hashtagsList.map((hashtagVariant) => (
                     <Hashtag
                       variant={hashtagVariant}
-                      bgColor="primary/20"
-                      borderColor="primary/40"
+                      borderColor={`${PALETTE_COLORS['primary/40']}`}
                       key={hashtagVariant}
                     />
                   ))}

@@ -15,6 +15,7 @@ export const PALETTE_COLORS: PaletteColors = {
   'secondary/10': 'secondary/10',
   'secondary/60': 'secondary/60',
   'secondary/100': 'secondary/100',
+  filterDropBckgColor: 'filterDropBckgColor',
   black: 'black',
 };
 
@@ -44,6 +45,7 @@ export const figmaTheme: {
     'secondary/10': '#d4ddbf',
     'secondary/60': '#8FBF26',
     'secondary/100': '#445B12',
+    filterDropBckgColor: '#EFF2F1',
     black: '#000',
   },
   typography: {
