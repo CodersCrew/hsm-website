@@ -1,3 +1,3 @@
 export * from './ImportantNumbersSection';
 export * from './ProjectsPreviewSection';
-export * from './SearchBar';
+export * from './SearchBar/SearchBar';

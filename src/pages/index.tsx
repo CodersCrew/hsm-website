@@ -1,6 +1,7 @@
 import Head from 'next/head';
 
 import { FormatE1, Header, Partnership, Projects, WhoWeAre } from '@/containers/HomePage';
+import { ProjectContextProvider } from '@/context/projectPage.context';
 
 const Home = () => (
   <>
@@ -12,7 +13,9 @@ const Home = () => (
     </Head>
     <Header />
     <WhoWeAre />
-    <Projects />
+    <ProjectContextProvider>
+      <Projects />
+    </ProjectContextProvider>
     <FormatE1 />
     <Partnership />
   </>
