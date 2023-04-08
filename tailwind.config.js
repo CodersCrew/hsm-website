@@ -20,8 +20,14 @@ module.exports = {
       black: '#000',
     },
     extend: {
+      width: {
+        filterDropdown: '783px',
+      },
       borderRadius: {
         20: '20px',
+      },
+      borderWidth: {
+        1: '1px',
       },
       fontFamily: {
         lato: ['lato'],

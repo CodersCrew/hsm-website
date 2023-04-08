@@ -4,7 +4,7 @@ export const Button: React.FC<ButtonProps> = ({ kind, className, borderColor, te
   <button
     className={`
                 py-2 px-6 font-normal
-                ${kind === `primary' && 'rounded-20 bg-primary/90 text-${textColor || 'neutral/20'}`}
+                ${kind === 'primary' && `rounded-20 bg-primary/90 text-${textColor || 'neutral/20'}`}
                 ${kind === 'secondary' && 'rounded-20 bg-primary/20'}
                 ${
                   kind === 'toggle' &&

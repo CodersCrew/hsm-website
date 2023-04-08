@@ -13,13 +13,19 @@ export const SearchBar = () => {
   const [isDropdownVisible, setIsDropdownVisible] = useState<boolean>(false);
 
   const handleOnClick = () => setIsDropdownVisible(!isDropdownVisible);
+  const handleFiltersSelect = () => {
+    setIsDropdownVisible(!isDropdownVisible);
+  };
+  const handleFiltersReset = () => {
+    setIsDropdownVisible(!isDropdownVisible);
+  };
 
   return (
     <div className="flex h-48 w-auto items-center justify-between bg-neutral/10 px-32 ">
       <Input placeholder="Nazwa projektu">
         <Image width={24} height={24} src="/images/projects/search.svg" alt="Search input icon" />
       </Input>
-      <div>
+      <div className="relative">
         <Button
           kind="filter"
           onClick={handleOnClick}
@@ -28,9 +34,9 @@ export const SearchBar = () => {
           {' '}
           <Image width={24} height={24} src="/images/projects/filterIcon.svg" alt="Filter button icon" /> Filtry
         </Button>
-        <div className="dropdownContainer">
+        <div className="dropdownContainer absolute -right-1/4">
           {isDropdownVisible ? (
-            <div className="flex flex-col gap-12 rounded-2xl border-2 bg-neutral/40  p-16">
+            <div className="m-6 flex w-filterDropdown flex-col gap-12 rounded-2xl bg-neutral/40 p-16">
               <div className="searchByStatusContainer flex flex-row items-start justify-between ">
                 <div className="flex flex-col gap-6">
                   <h4>Status projektu</h4>
@@ -60,13 +66,22 @@ export const SearchBar = () => {
                 <h4>Tagi</h4>
                 <div className="flex flex-wrap gap-3">
                   {hashtagsList.map((hashtagVariant) => (
-                    <Hashtag variant={hashtagVariant} key={hashtagVariant} />
+                    <Hashtag
+                      variant={hashtagVariant}
+                      bgColor="primary/20"
+                      borderColor="primary/40"
+                      key={hashtagVariant}
+                    />
                   ))}
                 </div>
               </div>
               <div className="manageFiltersContainer flex justify-between">
-                <p className="font-bold underline">Resetuj filtry</p>
-                <Button kind="primary">Zatwierdź</Button>
+                <button onClick={handleFiltersReset}>
+                  <p className="font-bold underline">Resetuj filtry</p>
+                </button>
+                <Button kind="primary" textColor="neutral/20" onClick={handleFiltersSelect}>
+                  Zatwierdź
+                </Button>
               </div>
             </div>
           ) : null}

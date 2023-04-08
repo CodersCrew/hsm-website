@@ -1,3 +1,5 @@
+import { PaletteColorType } from '@/components/FigmaTheme/FigmaTheme.types';
+
 export const hashtagsList = [
   'ekologia',
   'wystawa',
@@ -12,4 +14,6 @@ export type HashtagVariant = (typeof hashtagsList)[number];
 
 export type HashtagProps = {
   variant: HashtagVariant;
+  bgColor?: PaletteColorType;
+  borderColor?: PaletteColorType;
 };
