@@ -1,7 +1,8 @@
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-import { useProjectPageContext } from '@/context/projectPage.context';
+import { STATUS_OPTIONS } from '@/components/StatusTag/StatusTag.utils';
+import { ProjectContextValues, useProjectPageContext } from '@/context/projectPage.context';
 
 import { Button } from '../../Button';
 import { PALETTE_COLORS } from '../../FigmaTheme';
@@ -11,35 +12,50 @@ import { ProjectStatus, projectStatusesList } from '../../StatusTag/StatusTag.ty
 import Hashtag from '../Hashtag/Hashtag';
 import { hashtagsList, HashtagVariant } from '../Hashtag/Hashtag.types';
 
+type IfIsInTheArrayProps = { array: string[]; item: string };
+
 export const SearchBar = () => {
   const { filter } = useProjectPageContext();
   const [isDropdownVisible, setIsDropdownVisible] = useState<boolean>(false);
-  const handleOnClick = () => setIsDropdownVisible(!isDropdownVisible);
+  const [tempStatusFilterArray, setTempStatusFilterArray] = useState<ProjectContextValues['filter']['statuses']>([]);
+  const [tempHashtagFilterArray, setTempHashtagFilterArray] = useState<ProjectContextValues['filter']['hashtags']>([]);
 
+  const handleOnClick = () => {
+    setIsDropdownVisible(!isDropdownVisible);
+    setTempHashtagFilterArray([]);
+    setTempStatusFilterArray([]);
+  };
   const handleFiltersSelect = () => {
     setIsDropdownVisible(!isDropdownVisible);
-    filter.setHashtags(filter.hashtags);
-    filter.setStatuses(filter.statuses);
-    console.log('ACCEPT FILTERS:', filter);
+    filter.setHashtags(tempHashtagFilterArray);
+    filter.setStatuses(tempStatusFilterArray);
   };
   const handleFiltersReset = () => {
-    filter.hashtags = [];
-    filter.statuses = [];
     filter.setHashtags([]);
     filter.setStatuses([]);
-    console.log('RESET FILTERS:', filter);
+    setTempHashtagFilterArray([]);
+    setTempStatusFilterArray([]);
   };
-
   const handleHashtagFilter = (hashtag: HashtagVariant) => {
-    if (filter.hashtags.find((contextHash) => contextHash === hashtag)) return;
-    filter.hashtags.push(hashtag);
-    console.log('SET HASHTAGS:', filter);
+    if (tempHashtagFilterArray.find((contextHash) => contextHash === hashtag) || !(hashtag satisfies HashtagVariant))
+      return;
+    setTempHashtagFilterArray([...tempHashtagFilterArray, hashtag]);
   };
   const handleStatusesFilter = (status: ProjectStatus) => {
-    if (filter.statuses.find((contextStatus) => contextStatus === status)) return;
-    filter.statuses.push(status);
-    console.log('SET STATUSES:', filter);
+    if (tempStatusFilterArray.find((contextStatus) => contextStatus === status) || !(status satisfies ProjectStatus))
+      return;
+    setTempStatusFilterArray([...tempStatusFilterArray, status]);
   };
+  const handleCancelHashtagFilter = (hashtag: HashtagVariant) =>
+    setTempHashtagFilterArray([...tempHashtagFilterArray.filter((item) => item !== hashtag)]);
+  const handleCancelStatusFilter = (status: ProjectStatus) =>
+    setTempStatusFilterArray([...tempStatusFilterArray.filter((item) => item !== status)]);
+
+  useEffect(() => {
+    console.log(filter);
+  }, [filter]);
+
+  const ifIsInTheArray = ({ array, item }: IfIsInTheArrayProps) => array.find((statusFilter) => statusFilter === item);
 
   return (
     <div className={`flex h-48 w-auto items-center justify-between bg-${PALETTE_COLORS['neutral/10']} px-32 `}>
@@ -65,7 +81,7 @@ export const SearchBar = () => {
                   <h4>Status projektu</h4>
                   <div className="flex gap-6">
                     {projectStatusesList.map((projectStatus) => {
-                      if (projectStatus !== 'cyclical')
+                      if (projectStatus !== STATUS_OPTIONS.cyclical)
                         return (
                           <Button
                             onClick={(event) => handleStatusesFilter((event as any).target.innerText)}
@@ -79,6 +95,16 @@ export const SearchBar = () => {
                               ifCyclical={false}
                               className="text-M_regular font-semibold leading-M_regular"
                             />
+                            {ifIsInTheArray({ array: tempStatusFilterArray, item: projectStatus }) ||
+                            ifIsInTheArray({ array: filter.statuses, item: projectStatus }) ? (
+                              <Image
+                                src="/images/projects/close.svg"
+                                alt={`Delete ${projectStatus} status filter`}
+                                width={20}
+                                height={20}
+                                onClick={() => handleCancelStatusFilter(projectStatus)}
+                              />
+                            ) : null}
                           </Button>
                         );
                       return (
@@ -87,8 +113,19 @@ export const SearchBar = () => {
                           kind="filterStatusOption"
                           borderColor={`${PALETTE_COLORS['primary/20']}`}
                           key={projectStatus}
+                          className="flex items-center justify-center"
                         >
                           <StatusTag ifCyclical className="text-M_regular font-semibold leading-M_regular" />
+                          {ifIsInTheArray({ array: tempStatusFilterArray, item: STATUS_OPTIONS.cyclical }) ||
+                          ifIsInTheArray({ array: filter.statuses, item: STATUS_OPTIONS.cyclical }) ? (
+                            <Image
+                              src="/images/projects/close.svg"
+                              alt={`Delete ${projectStatus} status filter`}
+                              width={20}
+                              height={20}
+                              onClick={() => handleCancelStatusFilter(STATUS_OPTIONS.cyclical)}
+                            />
+                          ) : null}
                         </Button>
                       );
                     })}
@@ -104,7 +141,18 @@ export const SearchBar = () => {
                       key={hashtagVariant}
                       onClick={(event) => handleHashtagFilter((event as any).target.innerText)}
                     >
-                      <Hashtag variant={hashtagVariant} borderColor={`${PALETTE_COLORS['primary/40']}`} />
+                      <Hashtag variant={hashtagVariant} borderColor={`${PALETTE_COLORS['primary/40']}`}>
+                        {ifIsInTheArray({ array: tempHashtagFilterArray, item: hashtagVariant }) ||
+                        ifIsInTheArray({ array: filter.hashtags, item: hashtagVariant }) ? (
+                          <Image
+                            src="/images/projects/close.svg"
+                            alt={`Delete ${hashtagVariant} status filter`}
+                            width={20}
+                            height={20}
+                            onClick={() => handleCancelHashtagFilter(hashtagVariant)}
+                          />
+                        ) : null}
+                      </Hashtag>
                     </button>
                   ))}
                 </div>

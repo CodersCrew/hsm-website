@@ -1,9 +1,13 @@
-import { StatusIcons } from './StatusTag.types';
+import { StatusIcons, StatusOptions } from './StatusTag.types';
 
-const STATUS_ICONS: StatusIcons = {
+export const STATUS_ICONS: StatusIcons = {
   active: '/images/projects/status_active.svg',
   archival: '/images/projects/status_archival.svg',
   cyclical: '/images/projects/status_cyclical.svg',
 };
 
-export default STATUS_ICONS;
+export const STATUS_OPTIONS: StatusOptions = {
+  active: 'active',
+  archival: 'archival',
+  cyclical: 'cyclical',
+};

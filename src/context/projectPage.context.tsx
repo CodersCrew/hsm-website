@@ -3,7 +3,7 @@ import { createContext, Dispatch, FC, PropsWithChildren, SetStateAction, useCont
 import { HashtagVariant } from '@/components/Projects/Hashtag/Hashtag.types';
 import { ProjectStatus } from '@/components/StatusTag/StatusTag.types';
 
-type ContextValues = {
+export type ProjectContextValues = {
   filter: {
     statuses: ProjectStatus[];
     setStatuses: Dispatch<SetStateAction<ProjectStatus[]>>;
@@ -12,7 +12,7 @@ type ContextValues = {
   };
 };
 
-const initialValue: ContextValues = {
+const initialValue: ProjectContextValues = {
   filter: {
     statuses: [],
     setStatuses: () => {},
@@ -24,10 +24,10 @@ const initialValue: ContextValues = {
 const ProjectPageContext = createContext(initialValue);
 
 export const ProjectContextProvider: FC<PropsWithChildren> = ({ children }) => {
-  const [filterStatuses, setFilterStatuses] = useState<ContextValues['filter']['statuses']>([]);
-  const [filterHashtags, setFilterHashtags] = useState<ContextValues['filter']['hashtags']>([]);
+  const [filterStatuses, setFilterStatuses] = useState<ProjectContextValues['filter']['statuses']>([]);
+  const [filterHashtags, setFilterHashtags] = useState<ProjectContextValues['filter']['hashtags']>([]);
   // eslint-disable-next-line react/jsx-no-constructed-context-values
-  const value: ContextValues = {
+  const value: ProjectContextValues = {
     filter: {
       statuses: filterStatuses,
       setStatuses: setFilterStatuses,

@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 import { StatusProps } from './StatusTag.types';
-import STATUS_ICONS from './StatusTag.utils';
+import { STATUS_ICONS } from './StatusTag.utils';
 
 export const StatusTag: React.FC<StatusProps> = ({ kind, ifCyclical, className, ...props }) => (
   <div {...props} className={`flex gap-2 ${className}`}>
