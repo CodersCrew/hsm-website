@@ -17,8 +17,8 @@ module.exports = {
       'secondary/10': '#d4ddbf',
       'secondary/60': '#8FBF26',
       'secondary/100': '#445B12',
-      'filterDropBckgColor': '#EFF2F1',
-      'black': '#000',
+      filterDropBckgColor: '#EFF2F1',
+      black: '#000',
     },
     extend: {
       boxShadow: {

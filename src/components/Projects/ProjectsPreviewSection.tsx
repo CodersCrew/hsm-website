@@ -2,18 +2,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 
 import { ProjectCard } from './ProjectCard/ProjectCard';
-import { PROJECTS_ARRAY } from './Projects.utils';
-
-const getProjectsOnSite = (arrayDivider: number) => {
-  const tempArray = [];
-
-  for (let i = 0; i < PROJECTS_ARRAY.length; i += arrayDivider) {
-    tempArray.push({
-      projects: PROJECTS_ARRAY.slice(i, i + arrayDivider),
-    });
-  }
-  return tempArray;
-};
+import { getProjectsOnSite } from './Projects.utils';
 
 export const ProjectPreviewSection = () => {
   const [siteNumber, setSiteNumber] = useState<number>(0);
@@ -26,7 +15,6 @@ export const ProjectPreviewSection = () => {
         <ProjectCard key={projectData.name} data={{ ...projectData, index }} />
       ))}
       <div className="flex justify-between py-16 px-32">
-        {' '}
         <p />
         <div className="flex justify-between gap-6 text-neutral/90">
           {projectsOnForSites.map((_siteData, siteIndex) => {

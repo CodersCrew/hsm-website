@@ -57,3 +57,14 @@ export const PROJECTS_ARRAY: ProjectCardType[] = [
     alt: 'Arch/Box',
   },
 ];
+
+export const getProjectsOnSite = (arrayDivider: number) => {
+  const tempArray = [];
+
+  for (let i = 0; i < PROJECTS_ARRAY.length; i += arrayDivider) {
+    tempArray.push({
+      projects: PROJECTS_ARRAY.slice(i, i + arrayDivider),
+    });
+  }
+  return tempArray;
+};

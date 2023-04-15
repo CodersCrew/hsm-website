@@ -2,14 +2,12 @@ import Image from 'next/image';
 
 import { StatusTag } from '../../StatusTag';
 import Hashtag from '../Hashtag/Hashtag';
-import { ProjectCardType } from './ProjectCard.types';
-
-type ProjectCardProps = { data: ProjectCardType & { index: number } };
+import { ProjectCardProps } from './ProjectCard.types';
 
 export const ProjectCard = ({ data }: ProjectCardProps) => {
   const { name, status, ifCyclical, hashtags, shortDescription, imageSRC, alt, index } = data;
   return (
-    <div className={`flex gap-24 px-28 flex-${index % 2 ? 'row-reverse' : 'row'} py-16`}>
+    <div className={`flex gap-24 px-28 flex-${index % 2 > 0 ? 'row-reverse' : 'row'} py-16`}>
       <Image className="flex flex-auto" src={imageSRC} alt={`Project ${alt}`} width={588} height={332} />
       <div className="order-1 flex flex-auto flex-col items-start ">
         <header className="pb-6 text-neutral/90">

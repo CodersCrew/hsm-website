@@ -14,3 +14,5 @@ export type ProjectCardType = {
   imageSRC: string;
   alt: string;
 };
+
+export type ProjectCardProps = { data: ProjectCardType & { index: number } };
