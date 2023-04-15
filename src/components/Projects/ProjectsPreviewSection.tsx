@@ -10,7 +10,7 @@ export const ProjectPreviewSection = () => {
   const projectsOnForSites = getProjectsOnSite(maxProjectsOnThePage);
 
   return (
-    <section>
+    <section className="z-10">
       {projectsOnForSites[siteNumber].projects.map((projectData, index) => (
         <ProjectCard key={projectData.name} data={{ ...projectData, index }} />
       ))}

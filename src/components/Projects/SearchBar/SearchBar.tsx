@@ -20,11 +20,11 @@ export const SearchBar = () => {
   const [tempHashtagFilterArray, setTempHashtagFilterArray] = useState<ProjectContextValues['filterHashtags']>([]);
 
   const handleOnClick = () => {
-    console.log(filterHashtags, filterStatuses);
     setIsDropdownVisible(!isDropdownVisible);
+    setTempHashtagFilterArray(filterHashtags);
+    setTempStatusFilterArray(filterStatuses);
   };
   const handleFiltersSelect = () => {
-    console.log(tempHashtagFilterArray, filterHashtags, tempStatusFilterArray, filterStatuses);
     setIsDropdownVisible(!isDropdownVisible);
     setFilterHashtags(tempHashtagFilterArray);
     setFilterStatuses(tempStatusFilterArray);
@@ -64,9 +64,9 @@ export const SearchBar = () => {
           {' '}
           <Image width={24} height={24} src="/images/projects/filterIcon.svg" alt="Filter button icon" /> Filtry
         </Button>
-        <div className="dropdownContainer absolute -right-1/4">
+        <div className="dropdownContainer absolute -right-1/4 z-20">
           {isDropdownVisible ? (
-            <div className="m-6 flex w-filterDropdown flex-col gap-12 rounded-2xl bg-filterDropBckgColor p-16 shadow-allPopupAndModals">
+            <div className="m-6 flex w-filterDropdown flex-col gap-12 rounded-2xl bg-filterDropBckgColor p-16 shadow-allPopupAndModals ">
               <div className="searchByStatusContainer flex flex-row items-start justify-between ">
                 <div className="flex flex-col gap-6">
                   <h4>Status projektu</h4>
@@ -107,8 +107,7 @@ export const SearchBar = () => {
                           className="flex items-center justify-center"
                         >
                           <StatusTag ifCyclical className="text-M_regular font-semibold leading-M_regular" />
-                          {ifIsInTheArray({ array: tempStatusFilterArray, item: STATUS_OPTIONS.cyclical }) ||
-                          ifIsInTheArray({ array: filterStatuses, item: STATUS_OPTIONS.cyclical }) ? (
+                          {ifIsInTheArray({ array: tempStatusFilterArray, item: STATUS_OPTIONS.cyclical }) ? (
                             <Image
                               src="/images/projects/close.svg"
                               alt={`Delete ${projectStatus} status filter`}
@@ -134,8 +133,7 @@ export const SearchBar = () => {
                         borderColor="primary/40"
                         onClick={() => handleHashtagFilter(hashtagVariant)}
                       >
-                        {ifIsInTheArray({ array: tempHashtagFilterArray, item: hashtagVariant }) ||
-                        ifIsInTheArray({ array: filterHashtags, item: hashtagVariant }) ? (
+                        {ifIsInTheArray({ array: tempHashtagFilterArray, item: hashtagVariant }) ? (
                           <Image
                             src="/images/projects/close.svg"
                             alt={`Delete ${hashtagVariant} status filter`}

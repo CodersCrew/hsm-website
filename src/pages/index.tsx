@@ -12,7 +12,7 @@ const Home = () => (
     </Head>
     <Header />
     <WhoWeAre />
-      <Projects />
+    <Projects />
     <FormatE1 />
     <Partnership />
   </>
