@@ -129,6 +129,8 @@ export const SearchBar = () => {
                       <Hashtag
                         variant={hashtagVariant}
                         borderColor="primary/40"
+                        bgColor="primary/20"
+                        textColor="primary/90"
                         onClick={() => handleHashtagFilter(hashtagVariant)}
                       >
                         {ifIsInTheArray({ array: tempHashtagFilterArray, item: hashtagVariant }) ? (
