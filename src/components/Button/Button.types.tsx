@@ -1,6 +1,7 @@
 import { HTMLAttributes, PropsWithChildren } from 'react';
 
-import { PaletteColorType } from '../FigmaTheme/FigmaTheme.types';
+import { PaletteColorType } from '@/types/shared.types';
+
 
 const buttonVariants = ['primary', 'secondary', 'toggle', 'filter', 'filterStatusOption'] as const;
 
