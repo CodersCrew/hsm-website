@@ -74,49 +74,47 @@ export const SearchBar = () => {
                     {projectStatusesList.map((projectStatus) => {
                       if (projectStatus !== STATUS_OPTIONS.cyclical)
                         return (
-                          <Button
-                            onClick={() => handleStatusesFilter(projectStatus)}
-                            kind="filterStatusOption"
-                            key={projectStatus}
-                            textColor="neutral/90"
-                            className="flex items-center justify-center"
-                          >
+                          <button onClick={() => handleStatusesFilter(projectStatus)} key={projectStatus}>
                             <StatusTag
                               kind={projectStatus}
                               ifCyclical={false}
-                              className="text-M_regular font-semibold leading-M_regular"
-                            />
-                            {ifIsInTheArray({ array: tempStatusFilterArray, item: projectStatus }) ||
-                            ifIsInTheArray({ array: filterStatuses, item: projectStatus }) ? (
+                              textColor="neutral/90"
+                              borderColor="neutral/40"
+                              bgColor="neutral/10"
+                              className="flex items-center justify-center rounded-full py-2 px-4 text-M_regular font-semibold leading-M_regular"
+                            >
+                              {ifIsInTheArray({ array: tempStatusFilterArray, item: projectStatus }) ? (
+                                <Image
+                                  src="/images/projects/close.svg"
+                                  alt={`Delete ${projectStatus} status filter`}
+                                  width={20}
+                                  height={20}
+                                  onClick={() => handleCancelStatusFilter(projectStatus)}
+                                />
+                              ) : null}
+                            </StatusTag>
+                          </button>
+                        );
+                      return (
+                        <button onClick={() => handleStatusesFilter(projectStatus)} key={projectStatus}>
+                          <StatusTag
+                            ifCyclical
+                            textColor="neutral/90"
+                            borderColor="neutral/40"
+                            bgColor="neutral/10"
+                            className="flex items-center justify-center rounded-full py-2 px-4 text-M_regular font-semibold leading-M_regular"
+                          >
+                            {ifIsInTheArray({ array: tempStatusFilterArray, item: STATUS_OPTIONS.cyclical }) ? (
                               <Image
                                 src="/images/projects/close.svg"
                                 alt={`Delete ${projectStatus} status filter`}
                                 width={20}
                                 height={20}
-                                onClick={() => handleCancelStatusFilter(projectStatus)}
+                                onClick={() => handleCancelStatusFilter(STATUS_OPTIONS.cyclical)}
                               />
                             ) : null}
-                          </Button>
-                        );
-                      return (
-                        <Button
-                          onClick={() => handleStatusesFilter(projectStatus)}
-                          kind="filterStatusOption"
-                          borderColor="primary/20"
-                          key={projectStatus}
-                          className="flex items-center justify-center"
-                        >
-                          <StatusTag ifCyclical className="text-M_regular font-semibold leading-M_regular" />
-                          {ifIsInTheArray({ array: tempStatusFilterArray, item: STATUS_OPTIONS.cyclical }) ? (
-                            <Image
-                              src="/images/projects/close.svg"
-                              alt={`Delete ${projectStatus} status filter`}
-                              width={20}
-                              height={20}
-                              onClick={() => handleCancelStatusFilter(STATUS_OPTIONS.cyclical)}
-                            />
-                          ) : null}
-                        </Button>
+                          </StatusTag>
+                        </button>
                       );
                     })}
                   </div>
