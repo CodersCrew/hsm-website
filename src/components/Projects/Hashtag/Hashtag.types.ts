@@ -1,3 +1,5 @@
+import { DetailedHTMLProps, HTMLAttributes } from 'react';
+
 import { PaletteColorType } from '@/components/FigmaTheme/FigmaTheme.types';
 
 export const hashtagsList = [
@@ -16,4 +18,4 @@ export type HashtagProps = {
   variant: HashtagVariant;
   bgColor?: PaletteColorType;
   borderColor?: PaletteColorType;
-};
+} & DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
