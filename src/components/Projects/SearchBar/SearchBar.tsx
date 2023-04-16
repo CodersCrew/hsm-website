@@ -1,8 +1,8 @@
 import Image from 'next/image';
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 
 import { STATUS_OPTIONS } from '@/components/StatusTag/StatusTag.utils';
-import { ProjectContextValues, ProjectPageContext } from '@/context/projectPage.context';
+import { ProjectContextValues, useProjectPageContext } from '@/context/projectPage.context';
 
 import { Button } from '../../Button';
 import { Input } from '../../Input';
@@ -10,12 +10,10 @@ import { StatusTag } from '../../StatusTag';
 import { ProjectStatus, projectStatusesList } from '../../StatusTag/StatusTag.types';
 import Hashtag from '../Hashtag/Hashtag';
 import { hashtagsList, HashtagVariant } from '../Hashtag/Hashtag.types';
-import { FILTER_OPTIONS_VARIANTS } from './SearchBar.utils';
-
-type IfIsInTheArrayProps = { array: string[]; item: string };
+import { FILTER_OPTIONS_VARIANTS, ifIsInTheArray } from './SearchBar.utils';
 
 export const SearchBar = () => {
-  const { setFilterHashtags, setFilterStatuses, filterHashtags, filterStatuses } = useContext(ProjectPageContext);
+  const { setFilterHashtags, setFilterStatuses, filterHashtags, filterStatuses } = useProjectPageContext();
   const [isDropdownVisible, setIsDropdownVisible] = useState<boolean>(false);
   const [tempStatusFilterArray, setTempStatusFilterArray] = useState<ProjectContextValues['filterStatuses']>([]);
   const [tempHashtagFilterArray, setTempHashtagFilterArray] = useState<ProjectContextValues['filterHashtags']>([]);
@@ -52,9 +50,6 @@ export const SearchBar = () => {
     setTempHashtagFilterArray(tempHashtagFilterArray.filter((item) => item !== hashtag));
   const handleCancelStatusFilter = (status: ProjectStatus) =>
     setTempStatusFilterArray(tempStatusFilterArray.filter((item) => item !== status));
-
-  const ifIsInTheArray = ({ array, item }: IfIsInTheArrayProps) =>
-    !!array.find((statusFilter) => statusFilter === item);
 
   return (
     <div className={`flex h-48 w-auto items-center justify-between bg-neutral/10 px-32 `}>

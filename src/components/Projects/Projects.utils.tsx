@@ -58,12 +58,12 @@ export const PROJECTS_ARRAY: ProjectCardType[] = [
   },
 ];
 
-export const getProjectsOnSite = (arrayDivider: number) => {
+export const getProjectsOnSite = ({ array, arrayDivider }: { array: ProjectCardType[]; arrayDivider: number }) => {
   const tempArray = [];
 
-  for (let i = 0; i < PROJECTS_ARRAY.length; i += arrayDivider) {
+  for (let i = 0; i < array.length; i += arrayDivider) {
     tempArray.push({
-      projects: PROJECTS_ARRAY.slice(i, i + arrayDivider),
+      projects: array.slice(i, i + arrayDivider),
     });
   }
   return tempArray;

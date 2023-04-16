@@ -1,14 +1,6 @@
-import { PaletteColorType } from '@/types/shared.types';
+import { FilterOptionsVariantsType, IfIsInTheArrayProps } from './SearchBar.types';
 
-export const filterOptions = ['hashtags', 'statuses'] as const;
-export const colorProperties = ['textColor', 'borderColor', 'bgColor'] as const;
-export const FILTER_OPTIONS_VARIANTS: {
-  [filterOption in (typeof filterOptions)[number]]: {
-    [ifSelected in 'selected' | 'notSelected']: {
-      [colorProp in (typeof colorProperties)[number]]: PaletteColorType;
-    };
-  };
-} = {
+export const FILTER_OPTIONS_VARIANTS: FilterOptionsVariantsType = {
   hashtags: {
     notSelected: {
       textColor: 'primary/90',
@@ -34,3 +26,6 @@ export const FILTER_OPTIONS_VARIANTS: {
     },
   },
 };
+
+export const ifIsInTheArray = ({ array, item }: IfIsInTheArrayProps) =>
+  !!array.find((statusFilter) => statusFilter === item);

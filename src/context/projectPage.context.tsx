@@ -1,4 +1,4 @@
-import { createContext, Dispatch, FC, PropsWithChildren, SetStateAction, useState } from 'react';
+import { createContext, Dispatch, FC, PropsWithChildren, SetStateAction, useContext, useState } from 'react';
 
 import { HashtagVariant } from '@/components/Projects/Hashtag/Hashtag.types';
 import { ProjectStatus } from '@/components/StatusTag/StatusTag.types';
@@ -32,3 +32,5 @@ export const ProjectContextProvider: FC<PropsWithChildren> = ({ children }) => {
 
   return <ProjectPageContext.Provider value={value}>{children}</ProjectPageContext.Provider>;
 };
+
+export const useProjectPageContext = () => useContext(ProjectPageContext);
