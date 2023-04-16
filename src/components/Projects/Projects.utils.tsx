@@ -60,17 +60,6 @@ export const PROJECTS_ARRAY: ProjectCardType[] = [
   },
 ];
 
-export const getProjectsOnSite = ({ array, arrayDivider }: { array: ProjectCardType[]; arrayDivider: number }) => {
-  const tempArray = [];
-
-  for (let i = 0; i < array.length; i += arrayDivider) {
-    tempArray.push({
-      projects: array.slice(i, i + arrayDivider),
-    });
-  }
-  return tempArray;
-};
-
 export const filterProjectsByHashtagsAndStatuses = ({
   hashtags,
   statuses,
@@ -80,10 +69,25 @@ export const filterProjectsByHashtagsAndStatuses = ({
 }) => {
   const filteredProjectsArray = PROJECTS_ARRAY.filter(
     (project) =>
-      !!project.hashtags.find((projectHashtag) => hashtags.find((filterHashtag) => filterHashtag === projectHashtag)) &&
-      !!(statuses.length>0?[project.status, project.ifCyclical ? 'cyclical' : null].find((projectStatus) =>
-        statuses.find((filterStatus) => filterStatus === projectStatus),
-      ):true),
+      !!(hashtags.length > 0
+        ? project.hashtags.find((projectHashtag) => hashtags.find((filterHashtag) => filterHashtag === projectHashtag))
+        : true) &&
+      !!(statuses.length > 0
+        ? [project.status, project.ifCyclical ? 'cyclical' : null].find((projectStatus) =>
+            statuses.find((filterStatus) => (projectStatus ? filterStatus === projectStatus : false)),
+          )
+        : true),
   );
   return hashtags.length > 0 || statuses.length > 0 ? filteredProjectsArray : PROJECTS_ARRAY;
+};
+
+export const getProjectsOnSite = ({ array, arrayDivider }: { array: ProjectCardType[]; arrayDivider: number }) => {
+  const tempArray = [];
+
+  for (let i = 0; i < array.length; i += arrayDivider) {
+    tempArray.push({
+      projects: array.slice(i, i + arrayDivider),
+    });
+  }
+  return tempArray;
 };
