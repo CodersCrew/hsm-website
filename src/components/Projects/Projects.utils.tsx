@@ -1,3 +1,5 @@
+import { ProjectStatus } from '../StatusTag/StatusTag.types';
+import { HashtagVariant } from './Hashtag/Hashtag.types';
 import { ProjectCardType } from './ProjectCard/ProjectCard.types';
 
 export const projectsBannerImage = {
@@ -67,4 +69,21 @@ export const getProjectsOnSite = ({ array, arrayDivider }: { array: ProjectCardT
     });
   }
   return tempArray;
+};
+
+export const filterProjectsByHashtagsAndStatuses = ({
+  hashtags,
+  statuses,
+}: {
+  hashtags: HashtagVariant[];
+  statuses: ProjectStatus[];
+}) => {
+  const filteredProjectsArray = PROJECTS_ARRAY.filter(
+    (project) =>
+      !!project.hashtags.find((projectHashtag) => hashtags.find((filterHashtag) => filterHashtag === projectHashtag)) &&
+      !!(statuses.length>0?[project.status, project.ifCyclical ? 'cyclical' : null].find((projectStatus) =>
+        statuses.find((filterStatus) => filterStatus === projectStatus),
+      ):true),
+  );
+  return hashtags.length > 0 || statuses.length > 0 ? filteredProjectsArray : PROJECTS_ARRAY;
 };
