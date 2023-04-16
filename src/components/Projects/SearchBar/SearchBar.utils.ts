@@ -1,12 +1,22 @@
-export const FILTER_OPTIONS_VARIANTS = {
+import { PaletteColorType } from '@/types/shared.types';
+
+export const filterOptions = ['hashtags', 'statuses'] as const;
+export const colorProperties = ['textColor', 'borderColor', 'bgColor'] as const;
+export const FILTER_OPTIONS_VARIANTS: {
+  [filterOption in (typeof filterOptions)[number]]: {
+    [ifSelected in 'selected' | 'notSelected']: {
+      [colorProp in (typeof colorProperties)[number]]: PaletteColorType;
+    };
+  };
+} = {
   hashtags: {
     notSelected: {
+      textColor: 'primary/90',
       borderColor: 'primary/40',
       bgColor: 'primary/20',
-      textColor: 'primary/90',
     },
     selected: {
-      textColor: 'neutral/10',
+      textColor: 'neutral/20',
       borderColor: 'primary/60',
       bgColor: 'primary/60',
     },
@@ -18,7 +28,7 @@ export const FILTER_OPTIONS_VARIANTS = {
       bgColor: 'neutral/10',
     },
     selected: {
-      textColor: 'neutral/10',
+      textColor: 'neutral/20',
       borderColor: 'primary/60',
       bgColor: 'primary/60',
     },

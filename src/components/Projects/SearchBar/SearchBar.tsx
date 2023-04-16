@@ -10,6 +10,7 @@ import { StatusTag } from '../../StatusTag';
 import { ProjectStatus, projectStatusesList } from '../../StatusTag/StatusTag.types';
 import Hashtag from '../Hashtag/Hashtag';
 import { hashtagsList, HashtagVariant } from '../Hashtag/Hashtag.types';
+import { FILTER_OPTIONS_VARIANTS } from './SearchBar.utils';
 
 type IfIsInTheArrayProps = { array: string[]; item: string };
 
@@ -52,7 +53,8 @@ export const SearchBar = () => {
   const handleCancelStatusFilter = (status: ProjectStatus) =>
     setTempStatusFilterArray(tempStatusFilterArray.filter((item) => item !== status));
 
-  const ifIsInTheArray = ({ array, item }: IfIsInTheArrayProps) => array.find((statusFilter) => statusFilter === item);
+  const ifIsInTheArray = ({ array, item }: IfIsInTheArrayProps) =>
+    !!array.find((statusFilter) => statusFilter === item);
 
   return (
     <div className={`flex h-48 w-auto items-center justify-between bg-neutral/10 px-32 `}>
@@ -72,18 +74,22 @@ export const SearchBar = () => {
                   <h4>Status projektu</h4>
                   <div className="flex gap-6">
                     {projectStatusesList.map((projectStatus) => {
+                      const ifFilterSelected = ifIsInTheArray({ array: tempStatusFilterArray, item: projectStatus });
+
+                      const { textColor, borderColor, bgColor } =
+                        FILTER_OPTIONS_VARIANTS.statuses[ifFilterSelected ? 'selected' : 'notSelected'];
                       if (projectStatus !== STATUS_OPTIONS.cyclical)
                         return (
                           <button onClick={() => handleStatusesFilter(projectStatus)} key={projectStatus}>
                             <StatusTag
                               kind={projectStatus}
                               ifCyclical={false}
-                              textColor="neutral/90"
-                              borderColor="neutral/40"
-                              bgColor="neutral/10"
+                              textColor={textColor}
+                              borderColor={borderColor}
+                              bgColor={bgColor}
                               className="flex items-center justify-center rounded-full py-2 px-4 text-M_regular font-semibold leading-M_regular"
                             >
-                              {ifIsInTheArray({ array: tempStatusFilterArray, item: projectStatus }) ? (
+                              {ifFilterSelected ? (
                                 <Image
                                   src="/images/projects/close.svg"
                                   alt={`Delete ${projectStatus} status filter`}
@@ -99,12 +105,12 @@ export const SearchBar = () => {
                         <button onClick={() => handleStatusesFilter(projectStatus)} key={projectStatus}>
                           <StatusTag
                             ifCyclical
-                            textColor="neutral/90"
-                            borderColor="neutral/40"
-                            bgColor="neutral/10"
+                            textColor={textColor}
+                            borderColor={borderColor}
+                            bgColor={bgColor}
                             className="flex items-center justify-center rounded-full py-2 px-4 text-M_regular font-semibold leading-M_regular"
                           >
-                            {ifIsInTheArray({ array: tempStatusFilterArray, item: STATUS_OPTIONS.cyclical }) ? (
+                            {ifFilterSelected ? (
                               <Image
                                 src="/images/projects/close.svg"
                                 alt={`Delete ${projectStatus} status filter`}
@@ -124,27 +130,33 @@ export const SearchBar = () => {
               <div className="searchByTagsContainer flex flex-col gap-6">
                 <h4>Tagi</h4>
                 <div className="flex flex-wrap gap-3">
-                  {hashtagsList.map((hashtagVariant) => (
-                    <button key={hashtagVariant}>
-                      <Hashtag
-                        variant={hashtagVariant}
-                        borderColor="primary/40"
-                        bgColor="primary/20"
-                        textColor="primary/90"
-                        onClick={() => handleHashtagFilter(hashtagVariant)}
-                      >
-                        {ifIsInTheArray({ array: tempHashtagFilterArray, item: hashtagVariant }) ? (
-                          <Image
-                            src="/images/projects/close.svg"
-                            alt={`Delete ${hashtagVariant} status filter`}
-                            width={20}
-                            height={20}
-                            onClick={() => handleCancelHashtagFilter(hashtagVariant)}
-                          />
-                        ) : null}
-                      </Hashtag>
-                    </button>
-                  ))}
+                  {hashtagsList.map((hashtagVariant) => {
+                    const ifFilterSelected = ifIsInTheArray({ array: tempHashtagFilterArray, item: hashtagVariant });
+
+                    const { textColor, borderColor, bgColor } =
+                      FILTER_OPTIONS_VARIANTS.hashtags[ifFilterSelected ? 'selected' : 'notSelected'];
+                    return (
+                      <button key={hashtagVariant}>
+                        <Hashtag
+                          variant={hashtagVariant}
+                          textColor={textColor}
+                          borderColor={borderColor}
+                          bgColor={bgColor}
+                          onClick={() => handleHashtagFilter(hashtagVariant)}
+                        >
+                          {ifFilterSelected ? (
+                            <Image
+                              src="/images/projects/close.svg"
+                              alt={`Delete ${hashtagVariant} status filter`}
+                              width={20}
+                              height={20}
+                              onClick={() => handleCancelHashtagFilter(hashtagVariant)}
+                            />
+                          ) : null}
+                        </Hashtag>
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
               <div className="manageFiltersContainer flex justify-between">

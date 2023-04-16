@@ -16,4 +16,4 @@ const paletteColors = [
   'filterDropBckgColor',
   'black',
 ] as const;
-export type PaletteColorType = (typeof paletteColors | 'transparent')[number];
+export type PaletteColorType = (typeof paletteColors)[number] | 'transparent';
