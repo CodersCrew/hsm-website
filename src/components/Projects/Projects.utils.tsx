@@ -91,8 +91,6 @@ export const filterProjectsByHashtagsAndStatuses = ({
       .map((projectStatus) => statuses.find((filterStatus) => filterStatus === projectStatus))
       .filter((item) => item !== undefined);
 
-    console.log(statuses, projectStatuses, filteredStatuses);
-
     return (
       !!(hashtags.length > 0 ? filteredHashtags.length === hashtags.length : true) &&
       !!(statuses.length > 0 ? filteredStatuses.length === statuses.length : true)

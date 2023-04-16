@@ -23,9 +23,7 @@ export const ProjectPreviewSection = () => {
 
   return (
     <section className="z-10">
-      {(inputFilter.length > 0) && ifProjectsExist ? (
-        <ResultBar ifResult>{inputFilter}</ResultBar>
-      ) : null}
+      {inputFilter.length > 0 && ifProjectsExist ? <ResultBar ifResult>{inputFilter}</ResultBar> : null}
       {ifProjectsExist ? (
         projectsOnForSites[siteNumber].projects.map((projectData, index) => (
           <ProjectCard key={projectData.name} data={{ ...projectData, index }} />
