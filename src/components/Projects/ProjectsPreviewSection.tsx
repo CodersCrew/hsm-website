@@ -23,7 +23,7 @@ export const ProjectPreviewSection = () => {
 
   return (
     <section className="z-10">
-      {(filterHashtags.length > 0 || filterStatuses.length > 0 || inputFilter.length > 0) && ifProjectsExist ? (
+      {(inputFilter.length > 0) && ifProjectsExist ? (
         <ResultBar ifResult>{inputFilter}</ResultBar>
       ) : null}
       {ifProjectsExist ? (

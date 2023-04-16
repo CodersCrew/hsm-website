@@ -78,17 +78,26 @@ export const filterProjectsByHashtagsAndStatuses = ({
   hashtags: HashtagVariant[];
   statuses: ProjectStatus[];
 }) => {
-  const filteredProjectsArray = PROJECTS_ARRAY.filter(
-    (project) =>
-      !!(hashtags.length > 0
-        ? project.hashtags.find((projectHashtag) => hashtags.find((filterHashtag) => filterHashtag === projectHashtag))
-        : true) &&
-      !!(statuses.length > 0
-        ? [project.status, project.ifCyclical ? 'cyclical' : null].find((projectStatus) =>
-            statuses.find((filterStatus) => (projectStatus ? filterStatus === projectStatus : false)),
-          )
-        : true),
-  );
+  const filteredProjectsArray = PROJECTS_ARRAY.filter((project) => {
+    const filteredHashtags = project.hashtags
+      .map((projectHashtag) =>
+        hashtags.find((filterHashtag) => filterHashtag === projectHashtag) ? projectHashtag : null,
+      )
+      .filter((item) => item !== null);
+
+    const projectStatuses = [project.status, project.ifCyclical ? 'cykliczny' : null].filter((item) => item !== null);
+
+    const filteredStatuses = projectStatuses
+      .map((projectStatus) => statuses.find((filterStatus) => filterStatus === projectStatus))
+      .filter((item) => item !== undefined);
+
+    console.log(statuses, projectStatuses, filteredStatuses);
+
+    return (
+      !!(hashtags.length > 0 ? filteredHashtags.length === hashtags.length : true) &&
+      !!(statuses.length > 0 ? filteredStatuses.length === statuses.length : true)
+    );
+  });
   return hashtags.length > 0 || statuses.length > 0 ? filteredProjectsArray : PROJECTS_ARRAY;
 };
 
