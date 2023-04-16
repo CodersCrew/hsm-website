@@ -3,9 +3,9 @@ import { useState } from 'react';
 
 import { useProjectPageContext } from '@/context/projectPage.context';
 
-import { NoResultPage } from './NoResultPage';
 import { ProjectCard } from './ProjectCard/ProjectCard';
 import { filterProjectsByHashtagsAndStatuses, filterProjectsByInput, getProjectsOnSite } from './Projects.utils';
+import { ResultBar } from './ResultBar';
 
 export const ProjectPreviewSection = () => {
   const { inputFilter, filterHashtags, filterStatuses } = useProjectPageContext();
@@ -20,14 +20,18 @@ export const ProjectPreviewSection = () => {
     arrayDivider: maxProjectsOnThePage,
   });
   const ifProjectsExist = projectsOnForSites[siteNumber];
+
   return (
     <section className="z-10">
+      {(filterHashtags.length > 0 || filterStatuses.length > 0 || inputFilter.length > 0) && ifProjectsExist ? (
+        <ResultBar ifResult>{inputFilter}</ResultBar>
+      ) : null}
       {ifProjectsExist ? (
         projectsOnForSites[siteNumber].projects.map((projectData, index) => (
           <ProjectCard key={projectData.name} data={{ ...projectData, index }} />
         ))
       ) : (
-        <NoResultPage>{inputFilter}</NoResultPage>
+        <ResultBar ifResult={false}>{inputFilter}</ResultBar>
       )}
       {ifProjectsExist ? (
         <div className="flex justify-between py-16 px-32">
