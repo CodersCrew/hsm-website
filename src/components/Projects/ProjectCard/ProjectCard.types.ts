@@ -1,7 +1,13 @@
 import { ProjectStatusVariants } from '../../StatusTag/StatusTag.types';
 import { HashtagVariant } from '../Hashtag/Hashtag.types';
 
-const projectNames = ['BWA - Biuro Wspólnej aktywności', 'Chill - Out Architecture', 'PPS', 'Arch/Box'] as const;
+const projectNames = [
+  'BWA - Biuro Wspólnej aktywności',
+  'Chill - Out Architecture',
+  'Inside - Out Architecture',
+  'PPS',
+  'Arch/Box',
+] as const;
 export type ProjectNames = (typeof projectNames)[number];
 
 export type ProjectCardType = {

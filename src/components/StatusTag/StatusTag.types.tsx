@@ -2,8 +2,8 @@ import { HTMLAttributes } from 'react';
 
 import { PaletteColorType } from '@/types/shared.types';
 
-const projectStatus = ['active', 'archival'] as const;
-const additionalProjectStatuses = ['cyclical'] as const;
+const projectStatus = ['aktywny', 'archiwalny'] as const;
+const additionalProjectStatuses = ['cykliczny'] as const;
 export const projectStatusesList = [...projectStatus, ...additionalProjectStatuses] as const;
 
 export type ProjectStatus = (typeof projectStatusesList)[number];

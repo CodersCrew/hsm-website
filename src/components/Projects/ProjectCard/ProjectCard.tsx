@@ -26,7 +26,7 @@ export const ProjectCard = ({ data }: ProjectCardProps) => {
           />
         </header>
         <div className="flex flex-wrap gap-2 ">
-          {hashtags.map((hashtag, idx) => (
+          {hashtags.sort().map((hashtag, idx) => (
             <Hashtag variant={hashtag} key={`${hashtag + idx}`} />
           ))}
         </div>

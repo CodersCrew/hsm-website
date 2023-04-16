@@ -52,7 +52,7 @@ export const SearchBar = () => {
   const handleCancelStatusFilter = (status: ProjectStatus) =>
     setTempStatusFilterArray(tempStatusFilterArray.filter((item) => item !== status));
 
-  const handleInputOnChange = (e: any) => setInputFilter(e.target.value);
+  const handleInputOnChange = (e: React.ChangeEvent<HTMLInputElement>) => setInputFilter(e.currentTarget.value);
 
   return (
     <div className={`flex h-48 w-auto items-center justify-between bg-neutral/10 px-32 `}>
@@ -71,12 +71,12 @@ export const SearchBar = () => {
                 <div className="flex flex-col gap-6">
                   <h4>Status projektu</h4>
                   <div className="flex gap-6">
-                    {projectStatusesList.map((projectStatus) => {
+                    {[...projectStatusesList].sort().map((projectStatus) => {
                       const ifFilterSelected = ifIsInTheArray({ array: tempStatusFilterArray, item: projectStatus });
 
                       const { textColor, borderColor, bgColor } =
                         FILTER_OPTIONS_VARIANTS.statuses[ifFilterSelected ? 'selected' : 'notSelected'];
-                      if (projectStatus !== STATUS_OPTIONS.cyclical)
+                      if (projectStatus !== STATUS_OPTIONS.cykliczny)
                         return (
                           <button onClick={() => handleStatusesFilter(projectStatus)} key={projectStatus}>
                             <StatusTag
@@ -114,7 +114,7 @@ export const SearchBar = () => {
                                 alt={`Delete ${projectStatus} status filter`}
                                 width={20}
                                 height={20}
-                                onClick={() => handleCancelStatusFilter(STATUS_OPTIONS.cyclical)}
+                                onClick={() => handleCancelStatusFilter(STATUS_OPTIONS.cykliczny)}
                               />
                             ) : null}
                           </StatusTag>
@@ -128,7 +128,7 @@ export const SearchBar = () => {
               <div className="searchByTagsContainer flex flex-col gap-6">
                 <h4>Tagi</h4>
                 <div className="flex flex-wrap gap-3">
-                  {hashtagsList.map((hashtagVariant) => {
+                  {[...hashtagsList].sort().map((hashtagVariant) => {
                     const ifFilterSelected = ifIsInTheArray({ array: tempHashtagFilterArray, item: hashtagVariant });
 
                     const { textColor, borderColor, bgColor } =

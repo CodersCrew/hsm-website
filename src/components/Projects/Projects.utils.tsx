@@ -19,7 +19,7 @@ export const PROJECTS_ARRAY: ProjectCardType[] = [
   {
     id: 1,
     name: 'BWA - Biuro Wspólnej aktywności',
-    status: 'active',
+    status: 'aktywny',
     ifCyclical: true,
     hashtags: ['ekologia', 'wystawa', 'prototyp', 'wykłady', 'badania', 'sztuka', 'papier', 'budowa'],
     shortDescription: 'BWA to projekt, który powstał w obrębie Wystawy Studia Mistrzyń: Rajkowska - Nagi Nerw.',
@@ -29,9 +29,9 @@ export const PROJECTS_ARRAY: ProjectCardType[] = [
   {
     id: 2,
     name: 'Chill - Out Architecture',
-    status: 'active',
+    status: 'aktywny',
     ifCyclical: false,
-    hashtags: ['wystawa', 'badania', 'sztuka', 'badania'],
+    hashtags: ['wystawa', 'badania', 'sztuka', 'ekologia', 'papier', 'prototyp', 'wykłady'],
     shortDescription:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus id purus augue. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Lorem ipsum dolor sit amet, consectetur adipiscing elit.  ',
     imageSRC: '/images/projects/project_ChillOut.png',
@@ -39,6 +39,17 @@ export const PROJECTS_ARRAY: ProjectCardType[] = [
   },
   {
     id: 3,
+    name: 'Inside - Out Architecture',
+    status: 'archiwalny',
+    ifCyclical: false,
+    hashtags: ['wystawa', 'ekologia', 'papier', 'budowa'],
+    shortDescription:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus id purus augue. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Lorem ipsum dolor sit amet, consectetur adipiscing elit.  ',
+    imageSRC: '/images/projects/project_InsideOutArchitecture.png',
+    alt: 'Inside - Out Architecture',
+  },
+  {
+    id: 4,
     name: 'PPS',
     status: null,
     ifCyclical: true,
@@ -48,9 +59,9 @@ export const PROJECTS_ARRAY: ProjectCardType[] = [
     alt: 'PPS',
   },
   {
-    id: 4,
+    id: 5,
     name: 'Arch/Box',
-    status: 'archival',
+    status: 'archiwalny',
     ifCyclical: false,
     hashtags: ['ekologia', 'prototyp', 'wystawa', 'papier', 'budowa', 'sztuka'],
     shortDescription:

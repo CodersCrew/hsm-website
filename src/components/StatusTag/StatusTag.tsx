@@ -22,7 +22,7 @@ export const StatusTag: React.FC<PropsWithChildren<StatusProps>> = ({
   >
     {kind ? (
       <div className="flex gap-2 ">
-        <Image src={STATUS_ICONS[kind]} width={20} height={20} alt={`${kind} project statusicon`} />
+        <Image src={STATUS_ICONS[kind]} width={20} height={20} alt={`${kind} project status icon`} />
         {kind}
         {children}
       </div>
@@ -30,7 +30,7 @@ export const StatusTag: React.FC<PropsWithChildren<StatusProps>> = ({
 
     {ifCyclical ? (
       <div className="flex gap-2 ">
-        <Image src={STATUS_ICONS.cyclical} width={20} height={20} alt="cyclical status project icon" />
+        <Image src={STATUS_ICONS.cykliczny} width={20} height={20} alt="cyclical status project icon" />
         cyclical
         {children}
       </div>
