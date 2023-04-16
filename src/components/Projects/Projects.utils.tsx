@@ -81,6 +81,13 @@ export const filterProjectsByHashtagsAndStatuses = ({
   return hashtags.length > 0 || statuses.length > 0 ? filteredProjectsArray : PROJECTS_ARRAY;
 };
 
+export const filterProjectsByInput = ({ projects, input }: { projects: ProjectCardType[]; input: string }) => {
+  if (!input) return projects;
+  const filteredArray = projects.filter((project) => project.name.toLowerCase().includes(input.toLowerCase()));
+
+  return filteredArray;
+};
+
 export const getProjectsOnSite = ({ array, arrayDivider }: { array: ProjectCardType[]; arrayDivider: number }) => {
   const tempArray = [];
 

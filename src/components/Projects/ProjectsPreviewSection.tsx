@@ -5,15 +5,18 @@ import { useProjectPageContext } from '@/context/projectPage.context';
 
 import { NoResultPage } from './NoResultPage';
 import { ProjectCard } from './ProjectCard/ProjectCard';
-import { filterProjectsByHashtagsAndStatuses, getProjectsOnSite } from './Projects.utils';
+import { filterProjectsByHashtagsAndStatuses, filterProjectsByInput, getProjectsOnSite } from './Projects.utils';
 
 export const ProjectPreviewSection = () => {
-  const { filterHashtags, filterStatuses } = useProjectPageContext();
+  const { inputFilter, filterHashtags, filterStatuses } = useProjectPageContext();
   const [siteNumber, setSiteNumber] = useState<number>(0);
   const maxProjectsOnThePage = 3;
 
   const projectsOnForSites = getProjectsOnSite({
-    array: filterProjectsByHashtagsAndStatuses({ hashtags: filterHashtags, statuses: filterStatuses }),
+    array: filterProjectsByInput({
+      projects: filterProjectsByHashtagsAndStatuses({ hashtags: filterHashtags, statuses: filterStatuses }),
+      input: inputFilter,
+    }),
     arrayDivider: maxProjectsOnThePage,
   });
   const ifProjectsExist = projectsOnForSites[siteNumber];
@@ -24,7 +27,7 @@ export const ProjectPreviewSection = () => {
           <ProjectCard key={projectData.name} data={{ ...projectData, index }} />
         ))
       ) : (
-        <NoResultPage>Set Input Value</NoResultPage>
+        <NoResultPage>{inputFilter}</NoResultPage>
       )}
       {ifProjectsExist ? (
         <div className="flex justify-between py-16 px-32">

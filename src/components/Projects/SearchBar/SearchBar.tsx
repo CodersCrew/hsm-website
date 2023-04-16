@@ -13,7 +13,8 @@ import { hashtagsList, HashtagVariant } from '../Hashtag/Hashtag.types';
 import { FILTER_OPTIONS_VARIANTS, ifIsInTheArray } from './SearchBar.utils';
 
 export const SearchBar = () => {
-  const { setFilterHashtags, setFilterStatuses, filterHashtags, filterStatuses } = useProjectPageContext();
+  const { setInputFilter, setFilterHashtags, setFilterStatuses, filterHashtags, filterStatuses } =
+    useProjectPageContext();
   const [isDropdownVisible, setIsDropdownVisible] = useState<boolean>(false);
   const [tempStatusFilterArray, setTempStatusFilterArray] = useState<ProjectContextValues['filterStatuses']>([]);
   const [tempHashtagFilterArray, setTempHashtagFilterArray] = useState<ProjectContextValues['filterHashtags']>([]);
@@ -51,9 +52,11 @@ export const SearchBar = () => {
   const handleCancelStatusFilter = (status: ProjectStatus) =>
     setTempStatusFilterArray(tempStatusFilterArray.filter((item) => item !== status));
 
+  const handleInputOnChange = (e: any) => setInputFilter(e.target.value);
+
   return (
     <div className={`flex h-48 w-auto items-center justify-between bg-neutral/10 px-32 `}>
-      <Input placeholder="Nazwa projektu">
+      <Input placeholder="Nazwa projektu" onChange={handleInputOnChange}>
         <Image width={24} height={24} src="/images/projects/search.svg" alt="Search input icon" />
       </Input>
       <div className="relative">
