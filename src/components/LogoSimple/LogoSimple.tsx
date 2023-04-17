@@ -1,14 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import HSMLogo from '@/common/assets/navbar/hsm-logo.png';
-
 export const LogoSimple = () => (
   <div className="flex h-[56px] justify-between pl-4">
     <Link href="/">
       <div className="flex">
         <Image
-          src={HSMLogo}
+          src="/assets/hsm-logo.png"
           width={100}
           height={100}
           alt="Logo humanizacja środowiska miejskiego"
