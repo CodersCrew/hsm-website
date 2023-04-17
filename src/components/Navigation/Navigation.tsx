@@ -37,7 +37,7 @@ export const Navigation = () => {
         {NAV_LINKS.map((item) => {
           const { text, path } = item;
 
-          return <NavigationLink text={text} path={path} key={path} />;
+          return <NavigationLink onClick={() => setOpne(false)} text={text} path={path} key={path} />;
         })}
       </ul>
     </nav>
