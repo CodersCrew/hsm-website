@@ -6,7 +6,7 @@ import { LogoSimple } from '@/components/LogoSimple';
 import { FOOTER_NAV_CONTACT_LINKS, FOOTER_NAV_LINKS } from './Footer.constants';
 
 export const Footer = () => (
-  <div className="m-auto w-full bg-neutral/10 py-8 px-8">
+  <footer className="m-auto w-full bg-neutral/10 py-8 px-8">
     <div className="mx-auto grid max-w-sm justify-center md:max-w-screen-xl lg:grid-cols-3">
       <div className="my-12 mx-auto lg:ml-0">
         <LogoSimple />
@@ -54,5 +54,5 @@ export const Footer = () => (
         <Link href="/">Polityka prywatności</Link>
       </div>
     </div>
-  </div>
+  </footer>
 );
