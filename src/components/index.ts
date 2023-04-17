@@ -1,4 +1,4 @@
 export * from './Button';
 export * from './MainSection/MainSection';
-export * from './Navbar';
+export * from './Navigation';
 export * from './TopSection/TopSection';

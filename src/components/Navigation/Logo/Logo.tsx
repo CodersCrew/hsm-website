@@ -3,15 +3,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { PropsWithChildren } from 'react';
 
-import HSMLogo from '@/common/assets/navbar/hsm-logo.png';
-
 export const Logo = ({ children }: PropsWithChildren) => {
   return (
     <div className="flex justify-between py-2 pl-4">
       <Link href="/">
         <div className="flex">
           <Image
-            src={HSMLogo}
+            src="/assets/hsm-logo.png"
             width={100}
             height={100}
             alt="Logo humanizacja środowiska miejskiego"
