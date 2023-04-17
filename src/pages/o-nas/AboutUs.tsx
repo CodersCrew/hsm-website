@@ -4,39 +4,32 @@ import 'swiper/swiper-bundle.css';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
+import { MainSection, TopSection } from '@/components';
 import LinkButton from '@/components/LinkButton';
 import { useWindowSize } from '@/hooks/use-window-size';
 
-import { aboutUsText as texts } from '../../texts/about-us';
 import { boardTeamImagesData } from '../../constants/o-nas';
+import { aboutUsText as texts } from '../../texts/about-us';
 
 const AboutUsPage = () => {
   const { windowWidth } = useWindowSize();
 
   return (
-    <div>
-      <section className="flex-row items-center bg-primary/90 md:flex md:flex-row-reverse">
-        <Image
-          src="/images/about-us/team.png"
-          width={700}
-          height={500}
-          alt="ekipa hsm"
-          className="w-full md:min-w-[3/4]"
-        />
-        <div className="align-center px-4 pb-8 pt-10 text-base text-neutral/20 md:text-lg lg:pl-20 lg:pr-24 lg:text-2xl">
-          <h1 className="text-neutral/100 mb-4 text-3xl font-bold lg:text-5xl">{texts.hero.title}</h1>
-          <p className="leading-7">{texts.hero.content}</p>
-        </div>
-      </section>
+    <>
+      <TopSection
+        description={texts.hero.content}
+        header={texts.hero.title}
+        image={{ src: '/images/o-nas/team.png', alt: 'ekipa hsm' }}
+      />
 
-      <section className="mx-auto max-w-screen-xl text-base leading-7">
-        <div className="my-8 lg:mt-32 lg:flex lg:flex-row lg:px-4">
+      <MainSection className="mx-auto max-w-screen-xl">
+        <div className="mb-8 lg:mt-32 lg:flex lg:flex-row lg:px-4">
           <div className="my-5 px-4 lg:mr-12">
             <h2 className="text-neutral/100 mb-5 text-2xl font-bold">{texts.historySection.header}</h2>
             <p className="mb-8">{texts.historySection.firstParagraph}</p>
             <p>{texts.historySection.secondParagraph}</p>
           </div>
-          <Image src="/images/about-us/hala.png" width={550} height={410} alt="hala" className="mx-auto w-screen" />
+          <Image src="/images/o-nas/hala.png" width={550} height={410} alt="hala" className="mx-auto w-screen" />
         </div>
         <div className="my-5">
           <h2 className="text-neutral/100 my-5 px-4 text-2xl font-bold">{texts.boardTeamSection.header}</h2>
@@ -65,8 +58,8 @@ const AboutUsPage = () => {
             </LinkButton>
           </div>
         </div>
-      </section>
-    </div>
+      </MainSection>
+    </>
   );
 };
 

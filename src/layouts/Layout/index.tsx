@@ -1,15 +1,11 @@
-import { ReactNode } from 'react';
+import { PropsWithChildren } from 'react';
 
-import { Navbar } from '@/components';
+import { Navigation } from '@/components';
 import { Footer } from '@/containers';
 
-type LayoutProps = {
-  children: ReactNode;
-};
-
-export const Layout = ({ children }: LayoutProps) => (
+export const Layout = ({ children }: PropsWithChildren) => (
   <>
-    <Navbar />
+    <Navigation />
     {children}
     <Footer />
   </>
