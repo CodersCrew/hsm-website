@@ -23,6 +23,9 @@ module.exports = {
       borderRadius: {
         20: '20px',
       },
+      screens: {
+        'md-max': { max: '767px' },
+      },
     },
   },
   plugins: [],
