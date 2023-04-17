@@ -6,9 +6,9 @@ import { ProjectCardProps } from './ProjectCard.types';
 
 export const ProjectCard = ({ data }: ProjectCardProps) => {
   const { name, status, ifCyclical, hashtags, shortDescription, imageSRC, alt, index } = data;
-  const modulo2Index = index % 2 ? 'row-reverse' : 'row';
+  const moduloIndex = index % 2 ? 'flex-row-reverse' : 'flex-row';
   return (
-    <div className={`flex gap-24 px-28 flex-${modulo2Index} relative py-16`}>
+    <div className={`flex gap-24 px-28 ${moduloIndex} relative py-16`}>
       <Image
         className="flex max-h-projectImages max-w-projectImages"
         src={imageSRC}
