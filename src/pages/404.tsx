@@ -3,7 +3,7 @@ import Image from 'next/image';
 import LinkButton from '@/components/LinkButton';
 
 const Custom404Page = () => (
-  <section className="mx-auto max-w-screen-sm px-14 text-center">
+  <section className="mx-auto max-w-screen-sm px-14 py-10 text-center">
     <Image
       src="/images/404/404_image.svg"
       alt="Zagubiony człowiek"
