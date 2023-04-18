@@ -3,7 +3,7 @@ import { ImportantNumbersSection, ProjectPreviewSection, SearchBar } from '@/com
 import { projectsBannerImage, projectsTexts } from '@/components/Projects/Projects.utils';
 
 const ProjectPage = () => (
-  <>
+  <div className=" border-1 border-primary/60">
     <TopSection
       image={projectsBannerImage}
       header={projectsTexts.topSection.header}
@@ -14,7 +14,7 @@ const ProjectPage = () => (
       <SearchBar />
       <ProjectPreviewSection />
     </MainSection>
-  </>
+  </div>
 );
 
 export default ProjectPage;

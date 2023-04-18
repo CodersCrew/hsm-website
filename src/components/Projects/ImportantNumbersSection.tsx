@@ -9,7 +9,7 @@ const importantNumbersAndDescription: {
 };
 
 export const ImportantNumbersSection = () => (
-  <div>
+  <div className="border-1 border-primary/60">
     <h1 className="flex h-44 items-end justify-center">Projekty w liczbach</h1>
     <div className="flex justify-center gap-6 px-32 pt-16 pb-24 align-top ">
       {Object.keys(importantNumbersAndDescription).map((category) => {
