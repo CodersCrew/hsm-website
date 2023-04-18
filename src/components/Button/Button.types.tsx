@@ -8,4 +8,5 @@ export interface ButtonProps extends HTMLAttributes<HTMLButtonElement>, PropsWit
   kind: (typeof buttonVariants)[number];
   borderColor?: PaletteColorType;
   textColor?: PaletteColorType;
+  type?: 'submit' | 'button' | 'reset';
 }
