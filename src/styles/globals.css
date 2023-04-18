@@ -5,6 +5,7 @@
 h1 {
   @apply text-H1 font-semibold leading-H1;
 }
+  
 h2 {
   @apply my-2 text-H2 lg:text-4xl;
 }
@@ -23,13 +24,3 @@ h6 {
 p {
   @apply text-M_regular font-semibold leading-M_regular;
 }
-
-/* L_regular {
-  @apply text-L_regular font-semibold leading-L_regular;
-}
-S_regular {
-  @apply text-S_regular font-semibold leading-S_regular;
-}
-Display {
-  @apply text-Display font-semibold;
-} */

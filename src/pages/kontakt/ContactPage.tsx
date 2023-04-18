@@ -7,8 +7,8 @@ import InstagramIcon from '@/common/assets/icons/instagram_transparent.svg';
 import MailIcon from '@/common/assets/icons/mail_transparent.svg';
 
 const ContactPage = () => (
-  <section className="mx-auto max-w-7xl px-9">
-    <div className="my-16 flex justify-between">
+  <section className="mx-auto max-w-7xl px-9 py-16">
+    <div className="mb-16 flex justify-between">
       <div className="space-y-2">
         <h2>Adres</h2>
         <p>ul. Łukasza Górnickiego 22</p>

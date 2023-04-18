@@ -37,6 +37,7 @@ module.exports = {
       borderRadius: {
         20: '20px',
       },
+
       borderWidth: {
         1: '1px',
       },
@@ -65,6 +66,8 @@ module.exports = {
         L_regular: 1.78,
         M_regular: 1.75,
         S_regular: 1.43,
+      screens: {
+        'md-max': { max: '767px' },
       },
     },
   },
