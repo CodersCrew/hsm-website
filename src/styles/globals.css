@@ -2,6 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+h1 {
+  @apply text-H1 font-semibold leading-H1;
+}
+
 h2 {
-  @apply my-2 text-2xl lg:text-4xl;
+  @apply my-2 text-H2 lg:text-4xl;
+}
+h3 {
+  @apply text-H3 font-semibold leading-H3;
+}
+h4 {
+  @apply text-H4 font-semibold leading-H4;
+}
+h5 {
+  @apply text-H5 font-semibold leading-H5;
+}
+h6 {
+  @apply text-H6 font-semibold leading-H6;
+}
+p {
+  @apply text-M_regular font-semibold leading-M_regular;
 }

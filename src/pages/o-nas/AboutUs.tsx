@@ -19,17 +19,17 @@ const AboutUsPage = () => {
       <TopSection
         description={texts.hero.content}
         header={texts.hero.title}
-        image={{ src: '/images/about-us/team.png', alt: 'ekipa hsm' }}
+        image={{ src: '/images/o-nas/team.png', alt: 'ekipa hsm' }}
       />
 
-      <MainSection>
+      <MainSection className="mx-auto max-w-screen-xl">
         <div className="mb-8 lg:mt-32 lg:flex lg:flex-row lg:px-4">
           <div className="my-5 px-4 lg:mr-12">
             <h2 className="text-neutral/100 mb-5 text-2xl font-bold">{texts.historySection.header}</h2>
             <p className="mb-8">{texts.historySection.firstParagraph}</p>
             <p>{texts.historySection.secondParagraph}</p>
           </div>
-          <Image src="/images/about-us/hala.png" width={550} height={410} alt="hala" className="mx-auto w-screen" />
+          <Image src="/images/o-nas/hala.png" width={550} height={410} alt="hala" className="mx-auto w-screen" />
         </div>
         <div className="my-5">
           <h2 className="text-neutral/100 my-5 px-4 text-2xl font-bold">{texts.boardTeamSection.header}</h2>

@@ -1,10 +1,11 @@
 import { PropsWithChildren } from 'react';
 
-import { Navbar } from '@/components';
+import { Footer, Navigation } from '@/components';
 
 export const Layout = ({ children }: PropsWithChildren) => (
   <>
-    <Navbar />
+    <Navigation />
     {children}
+    <Footer />
   </>
 );

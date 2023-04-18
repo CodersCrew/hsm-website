@@ -1,11 +1,13 @@
 import Image from 'next/image';
 
-import { BurgerMenuProps } from './BurgerMenu.types';
+interface BurgerMenuProps {
+  toggleNav: () => void;
+}
 
-export const BurgerMenu = ({ toggleNav, BurgerMenuSrc }: BurgerMenuProps) => (
+export const BurgerMenu = ({ toggleNav }: BurgerMenuProps) => (
   <div onClick={toggleNav} onKeyUp={toggleNav} role="button" tabIndex={0} className="mr-5 p-4">
     <Image
-      src={BurgerMenuSrc}
+      src="/assets/burger-menu.png"
       width={150}
       height={100}
       alt="Ikona menu burger"
