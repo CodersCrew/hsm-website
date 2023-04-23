@@ -9,9 +9,9 @@ const importantNumbersAndDescription: {
 };
 
 export const ImportantNumbersSection = () => (
-  <div className="border-1 border-primary/60">
+  <div>
     <h1 className="flex h-44 items-end justify-center">Projekty w liczbach</h1>
-    <div className="flex justify-center gap-6 px-32 pt-16 pb-24 align-top ">
+    <div className="flex flex-col items-center justify-center gap-10 pt-16 pb-24 lg:flex-row lg:gap-6  lg:px-32">
       {Object.keys(importantNumbersAndDescription).map((category) => {
         const { number, description } = importantNumbersAndDescription[category as Category];
 

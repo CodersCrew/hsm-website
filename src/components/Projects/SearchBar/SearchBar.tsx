@@ -55,7 +55,7 @@ export const SearchBar = () => {
   const handleInputOnChange = (e: React.ChangeEvent<HTMLInputElement>) => setInputFilter(e.currentTarget.value);
 
   return (
-    <div className={`flex h-48 w-auto items-center justify-between bg-neutral/10 px-32 `}>
+    <div className="flex h-48 w-auto items-center justify-between gap-4 bg-neutral/10 px-1 lg:gap-0 lg:px-32 ">
       <Input placeholder="Nazwa projektu" onChange={handleInputOnChange}>
         <Image width={24} height={24} src="/images/projects/search.svg" alt="Search input icon" />
       </Input>

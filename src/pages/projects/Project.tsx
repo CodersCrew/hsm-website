@@ -3,7 +3,7 @@ import { ImportantNumbersSection, ProjectPreviewSection, SearchBar } from '@/com
 import { projectsBannerImage, projectsTexts } from '@/components/Projects/Projects.utils';
 
 const ProjectPage = () => (
-  <div className=" border-1 border-primary/60">
+  <div>
     <TopSection
       image={projectsBannerImage}
       header={projectsTexts.topSection.header}
