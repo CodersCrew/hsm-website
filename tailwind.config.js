@@ -34,6 +34,9 @@ module.exports = {
       maxWidth: {
         projectImages: '612px',
       },
+      minWidth: {
+        dropdownSD: '400px',
+      },
       borderRadius: {
         20: '20px',
       },

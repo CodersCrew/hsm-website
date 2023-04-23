@@ -64,13 +64,13 @@ export const SearchBar = () => {
           {' '}
           <Image width={24} height={24} src="/images/projects/filterIcon.svg" alt="Filter button icon" /> Filtry
         </Button>
-        <div className="dropdownContainer absolute -right-1/4 z-20">
+        <div className="dropdownContainer absolute right-0 z-20 lg:-right-1/4">
           {isDropdownVisible ? (
-            <div className="m-6 flex w-filterDropdown flex-col gap-12 rounded-2xl bg-filterDropBckgColor p-16 shadow-allPopupAndModals ">
+            <div className="m-7 flex min-w-dropdownSD flex-col gap-12 rounded-2xl bg-filterDropBckgColor p-8 shadow-allPopupAndModals lg:w-filterDropdown lg:p-16">
               <div className="searchByStatusContainer flex flex-row items-start justify-between ">
                 <div className="flex flex-col gap-6">
                   <h4>Status projektu</h4>
-                  <div className="flex gap-6">
+                  <div className="flex flex-wrap gap-4 lg:gap-6">
                     {[...projectStatusesList].sort().map((projectStatus) => {
                       const ifFilterSelected = ifIsInTheArray({ array: tempStatusFilterArray, item: projectStatus });
 
@@ -127,7 +127,7 @@ export const SearchBar = () => {
               </div>
               <div className="searchByTagsContainer flex flex-col gap-6">
                 <h4>Tagi</h4>
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-3 ">
                   {[...hashtagsList].sort().map((hashtagVariant) => {
                     const ifFilterSelected = ifIsInTheArray({ array: tempHashtagFilterArray, item: hashtagVariant });
 
