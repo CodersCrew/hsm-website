@@ -32,8 +32,8 @@ export const ProjectPreviewSection = () => {
         <ResultBar ifResult={false}>{inputFilter}</ResultBar>
       )}
       {ifProjectsExist ? (
-        <div className="flex justify-between py-16 px-32">
-          <p />
+        <div className="flex justify-between py-8 px-8  lg:py-16 lg:px-32">
+          <p className=" w-20  " />
           <div className="flex justify-between gap-6 text-neutral/90">
             {projectsOnForSites.map((_siteData, siteIndex) => {
               const ifDisabledButton = siteIndex === siteNumber;

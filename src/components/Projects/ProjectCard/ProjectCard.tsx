@@ -8,15 +8,15 @@ export const ProjectCard = ({ data }: ProjectCardProps) => {
   const { name, status, ifCyclical, hashtags, shortDescription, imageSRC, alt, index } = data;
   const moduloIndex = index % 2 ? 'flex-row-reverse' : 'flex-row';
   return (
-    <div className={`flex gap-24 px-28 ${moduloIndex} relative py-16`}>
+    <div className={`flex flex-col gap-10 lg:flex-row lg:gap-24 lg:px-28 ${moduloIndex} relative py-16`}>
       <Image
-        className="flex max-h-projectImages max-w-projectImages"
+        className="flex lg:max-h-projectImages lg:max-w-projectImages"
         src={imageSRC}
         alt={`Project ${alt}`}
         width={588}
         height={332}
       />
-      <div className="order-1 flex flex-auto flex-col items-start ">
+      <div className="order-1 flex flex-auto flex-col items-start px-4 lg:px-0">
         <header className="pb-6 text-neutral/90">
           <h2>{name}</h2>
           <StatusTag
