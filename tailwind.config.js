@@ -27,9 +27,14 @@ module.exports = {
       },
       width: {
         filterDropdown: '783px',
+        50: '200px',
+      },
+      height: {
+        50: '200px',
       },
       maxHeight: {
         projectImages: '384px',
+        topSection: '512px',
       },
       maxWidth: {
         projectImages: '612px',
