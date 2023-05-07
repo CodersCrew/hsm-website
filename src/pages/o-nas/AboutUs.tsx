@@ -8,11 +8,22 @@ import { MainSection, TopSection } from '@/components';
 import LinkButton from '@/components/LinkButton';
 import { useWindowSize } from '@/hooks/use-window-size';
 
-import { boardTeamImagesData } from '../../constants/o-nas';
+import { BoardTeamArray, boardTeamImagesData } from '../../constants/o-nas';
 import { aboutUsText as texts } from '../../texts/about-us';
+
+const putCEOInTheMiddleOfArray = (array: BoardTeamArray, slidesOnView: number): BoardTeamArray => {
+  const tempArray = array.slice();
+  const CEOIndex = array.findIndex((member) => member.title === 'Prezes');
+  tempArray.splice(CEOIndex, 1);
+  // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+  slidesOnView === 5 ? tempArray.splice(2, 0, array[CEOIndex]) : tempArray.splice(0, 0, array[CEOIndex]);
+  return tempArray;
+};
 
 const AboutUsPage = () => {
   const { windowWidth } = useWindowSize();
+  const sliderBreakpointCondition = windowWidth && windowWidth > 768 ? 5 : 2;
+  const sortedArrayBoardTeamArray = putCEOInTheMiddleOfArray(boardTeamImagesData, sliderBreakpointCondition);
 
   return (
     <>
@@ -33,8 +44,13 @@ const AboutUsPage = () => {
         </div>
         <div className="my-5">
           <h2 className="text-neutral/100 my-5 px-4 text-2xl font-bold">{texts.boardTeamSection.header}</h2>
-          <Swiper slidesPerView={windowWidth && windowWidth > 768 ? 5 : 2} spaceBetween={20} centeredSlides>
-            {boardTeamImagesData.map((image) => (
+          <Swiper
+            slidesPerView={sliderBreakpointCondition}
+            spaceBetween={20}
+            loopedSlides={1}
+            loop={!!(boardTeamImagesData.length > sliderBreakpointCondition)}
+          >
+            {sortedArrayBoardTeamArray.map((image) => (
               <SwiperSlide key={image.id} zoom>
                 <div className="relative">
                   <Image src={image.src} width={192} height={312} alt={image.alt} />
