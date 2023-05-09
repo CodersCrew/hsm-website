@@ -15,14 +15,8 @@ interface TopSectionProps extends PropsWithChildren {
 
 export const TopSection: React.FC<TopSectionProps> = ({ description, header, image, children }) => (
   <section className="flex w-full bg-primary/90 md:pl-32">
-    <div className="items-center md:flex md:flex-row-reverse">
-      <Image
-        src={image.src}
-        height={500}
-        width={500}
-        alt={image.alt}
-        className="mx-auto h-auto w-full md:max-w-[42%]"
-      />
+    <div className="basis-full items-center justify-between md:flex md:flex-row-reverse">
+      <Image src={image.src} height={500} width={500} alt={image.alt} className=" h-auto w-full md:max-w-[42%]" />
       <div className="mr-10 px-4 py-6 text-neutral/20 sm:py-10 md:text-lg lg:text-2xl">
         <h1>{header}</h1>
         <p className="">{description}</p>
