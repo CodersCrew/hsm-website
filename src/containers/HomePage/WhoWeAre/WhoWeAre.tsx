@@ -24,15 +24,16 @@ export const WhoWeAre = () => (
     <div className="mx-4 flex lg:mx-14 xl:mx-0">
       <div className="lg:pr-16 xl:pr-32">
         <div>
-          <h2 className="pb-5 text-[28px] font-semibold text-neutral/90 md:text-[36px]">Kim jesteśmy?</h2>
-          <p className="text-base tracking-wide lg:leading-9 ">
+          <h2 className="pb-5 text-[36px] text-neutral/90">Kim jesteśmy?</h2>
+          <p className="text-L_regular font-normal leading-L_regular tracking-wide ">
             Jesteśmy Kołem Naukowym działającym przy Wydziale Architektury Politechniki Wrocławskiej. Celem Koła jest
             sprowokowanie twórczej postawy w projektowaniu, badanie relacji człowiek-środowisko i korelacji
             natura-kultura. Propagujemy społeczne, zhumanizowane podejście do architektury i wszystkich dziedzin z nią
             związanych.
           </p>
         </div>
-        <div className="mx-auto mt-12 flex flex-wrap justify-center gap-y-12 gap-x-14 px-1 sm:justify-evenly md:max-w-xl">
+
+        <div className=" mt-12 flex flex-wrap justify-center gap-y-12 gap-x-14 px-1 sm:justify-evenly md:max-w-xl">
           {imagesData.map((image) => (
             <ImagesContainer key={image.altSrc} src={image.src} altSrc={image.altSrc} content={image.content} />
           ))}
@@ -55,12 +56,12 @@ export const WhoWeAre = () => (
         className="absolute -top-6 left-6 opacity-30  grayscale lg:left-8 lg:-top-5 lg:grayscale-0"
       />
 
-      <p className="text-base text-[18px] font-bold leading-[3rem] tracking-widest lg:text-4xl">
+      <h2 className=" tracking-widest lg:text-4xl">
         “Głównym błędem w projektowaniu jest brak zrozumienia i chęci, żeby poznać i przyswoić nowe idee. Drugą
         przeszkodą jest niechęć społeczna do robienia czegoś inaczej. Często społeczność nie aprobuje nowych projektów.
         Trzeba się przebijać przez swego rodzaju mur: krytyki, niechęci, niepewności”
-      </p>
-      <p className="mt-10 self-end text-base font-bold">prof. dr inż. arch. Zbigniew Bać</p>
+      </h2>
+      <h4 className="mt-10 self-end ">prof. dr inż. arch. Zbigniew Bać</h4>
       <Image
         src={Quotes}
         width={81}
