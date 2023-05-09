@@ -1,4 +1,13 @@
-export const boardTeamImagesData = [
+export type BoardTeamArray = {
+  id: number;
+  src: string;
+  alt: string;
+  title: string;
+  name: string;
+  background: string;
+}[];
+
+export const boardTeamImagesData: BoardTeamArray = [
   // {
   // TODO: Add better photos for the board team
   // TODO: If possible change the background prop

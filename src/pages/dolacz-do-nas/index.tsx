@@ -106,9 +106,20 @@ const JoinUsPage = () => (
 
       <div className="mx-auto max-w-screen-xl">
         {joinUsCards.map((card) => (
-          <div key={card.title} className="mx-4 my-6 rounded-xl bg-neutral/10 px-4 py-8 md:mx-6 md:flex md:px-8">
-            <Image src={card.image} height={160} width={160} alt="underline" className="mx-auto md:mx-4" />
-            <div className="md:mx-6">
+          <div
+            key={card.title}
+            className="mx-4 my-6 flex-row items-center justify-start rounded-xl bg-neutral/10 px-4 py-8 md:flex md:h-80 md:gap-14 md:px-16 md:py-10"
+          >
+            <Image
+              src={card.image}
+              height={200}
+              width={200}
+              style={{ objectFit: 'contain' }}
+              alt={card.title}
+              className=" h-50 w-50"
+            />
+
+            <div>
               <h2 className="">{card.title}</h2>
               <p className="my-6 text-base">{card.description}</p>
               <Link href="/" className="flex items-center text-base">
