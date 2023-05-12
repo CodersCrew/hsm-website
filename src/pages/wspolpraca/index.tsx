@@ -10,7 +10,7 @@ const partnershipTypes: PartnershipTypeProps[] = [
       src: '/images/wspolpraca/partnership-media.svg',
       alt: 'Współpraca mediowa',
     },
-    partnershipType: 'mediowy',
+    partnershipType: 'medialny',
   },
   {
     image: {
