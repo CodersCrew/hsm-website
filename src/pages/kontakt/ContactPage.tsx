@@ -28,7 +28,6 @@ const ContactPage = () => (
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
       />
-
     </div>
     <div>
       <h3 className="my-4 text-2xl lg:text-primary/60">Zapraszamy do kontaktu</h3>
