@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 import { LogoSimple } from '@/components/LogoSimple';
 
+import { Paragraph } from '../Paragraph/Paragraph';
 import { FOOTER_NAV_CONTACT_LINKS, FOOTER_NAV_LINKS } from './Footer.constants';
 
 export const Footer = () => (
@@ -16,7 +17,9 @@ export const Footer = () => (
         <ul className="w-fit">
           {FOOTER_NAV_LINKS.map((link) => (
             <Link href={link.text} key={link.text}>
-              <li className="my-1 py-2">{link.text}</li>
+              <li className="my-1 py-2">
+                <Paragraph size="regular">{link.text}</Paragraph>
+              </li>
             </Link>
           ))}
         </ul>
@@ -28,7 +31,9 @@ export const Footer = () => (
             <Link href={link.src} key={link.text}>
               <div className="flex items-center">
                 <div className="mr-3 hidden lg:block">{link.icon}</div>
-                <li className="my-1 py-1">{link.text}</li>
+                <li className="my-1 py-1 underline underline-offset-8">
+                  <Paragraph size="regular">{link.text}</Paragraph>
+                </li>
               </div>
             </Link>
           ))}
@@ -45,13 +50,18 @@ export const Footer = () => (
     </div>
 
     <div className="mx-auto mt-10 mb-4 max-w-screen-xl text-center text-neutral/80 lg:mt-20 lg:flex lg:items-center lg:justify-between">
-      <p>
+      <Paragraph size="regular">
         © 2022 Humanizacja Środowiska Miejskiego.{' '}
         <span className="block lg:inline-block">All rights reserved. Designed by CodersCrew</span>
-      </p>
-      <div className="mt-6 space-x-6 lg:mt-0">
-        <Link href="/">Regulamin</Link>
-        <Link href="/">Polityka prywatności</Link>
+      </Paragraph>
+      <div className=" mt-6 space-x-6 md:flex lg:mt-0">
+        <Link href="/">
+          {' '}
+          <Paragraph size="regular">Regulamin</Paragraph>{' '}
+        </Link>
+        <Link href="/">
+          <Paragraph size="regular">Polityka prywatności</Paragraph>
+        </Link>
       </div>
     </div>
   </footer>
