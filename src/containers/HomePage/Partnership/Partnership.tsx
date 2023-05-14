@@ -27,7 +27,7 @@ export const Partnership = () => (
         </div>
         <div>
           <Button kind="primary" className="mt-6">
-            <Paragraph size="regular">Poznaj format</Paragraph>
+            <Paragraph>Poznaj format</Paragraph>
           </Button>
         </div>
       </div>

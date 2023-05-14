@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { PropsWithChildren } from 'react';
 
+import { Paragraph } from '../Paragraph/Paragraph';
 import { StatusProps } from './StatusTag.types';
 import { STATUS_ICONS } from './StatusTag.utils';
 
@@ -27,7 +28,7 @@ export const StatusTag: React.FC<PropsWithChildren<StatusProps>> = ({
       {kind ? (
         <div className="flex gap-2 ">
           <Image src={STATUS_ICONS[kind]} width={20} height={20} alt={`${kind} project status icon`} />
-          {kind}
+          <Paragraph textBold="semibold">{kind}</Paragraph>
           {children}
         </div>
       ) : null}
@@ -35,7 +36,7 @@ export const StatusTag: React.FC<PropsWithChildren<StatusProps>> = ({
       {ifCyclical ? (
         <div className="flex gap-2 ">
           <Image src={STATUS_ICONS.cykliczny} width={20} height={20} alt="cyclical status project icon" />
-          cyclical
+          <Paragraph textBold="semibold">cyclical</Paragraph>
           {children}
         </div>
       ) : null}

@@ -27,7 +27,7 @@ export const WhoWeAre = () => (
       <div className="lg:pr-16 xl:pr-32">
         <div>
           <h2 className="pb-5 text-neutral/90">Kim jesteśmy?</h2>
-          <Paragraph size="regular" className="tracking-wide ">
+          <Paragraph className="tracking-wide ">
             Jesteśmy Kołem Naukowym działającym przy Wydziale Architektury Politechniki Wrocławskiej. Celem Koła jest
             sprowokowanie twórczej postawy w projektowaniu, badanie relacji człowiek-środowisko i korelacji
             natura-kultura. Propagujemy społeczne, zhumanizowane podejście do architektury i wszystkich dziedzin z nią

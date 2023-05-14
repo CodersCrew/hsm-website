@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { FC, PropsWithChildren } from 'react';
 
 import { HashtagProps } from './Hashtag.types';
+import { Paragraph } from '@/components/Paragraph/Paragraph';
 
 const Hashtag: FC<PropsWithChildren<HashtagProps>> = ({
   variant,
@@ -19,10 +20,12 @@ const Hashtag: FC<PropsWithChildren<HashtagProps>> = ({
   return (
     <div
       {...otherProps}
-      className={` ${bgColorProp} ${ifBorderExist} ${borderColorProp} flex items-center justify-center gap-2 rounded-full py-2 px-4 text-S_regular leading-S_regular ${textColorProp} `}
+      className={` ${bgColorProp} ${ifBorderExist} ${borderColorProp} flex items-center justify-center gap-2 rounded-full py-2 px-4 ${textColorProp} `}
     >
       <Image src="/images/projects/hashtag.svg" width={20} height={20} alt={`${variant} hashtag`} />
-      <p>{variant}</p>
+      <Paragraph size="small" textBold="semibold">
+        {variant}
+      </Paragraph>
       {children}
     </div>
   );

@@ -18,7 +18,7 @@ export const Footer = () => (
           {FOOTER_NAV_LINKS.map((link) => (
             <Link href={link.text} key={link.text}>
               <li className="my-1 py-2">
-                <Paragraph size="regular">{link.text}</Paragraph>
+                <Paragraph>{link.text}</Paragraph>
               </li>
             </Link>
           ))}
@@ -32,7 +32,7 @@ export const Footer = () => (
               <div className="flex items-center">
                 <div className="mr-3 hidden lg:block">{link.icon}</div>
                 <li className="my-1 py-1 underline underline-offset-8">
-                  <Paragraph size="regular">{link.text}</Paragraph>
+                  <Paragraph>{link.text}</Paragraph>
                 </li>
               </div>
             </Link>
@@ -50,17 +50,17 @@ export const Footer = () => (
     </div>
 
     <div className="mx-auto mt-10 mb-4 max-w-screen-xl text-center text-neutral/80 lg:mt-20 lg:flex lg:items-center lg:justify-between">
-      <Paragraph size="regular">
+      <Paragraph>
         © 2022 Humanizacja Środowiska Miejskiego.{' '}
         <span className="block lg:inline-block">All rights reserved. Designed by CodersCrew</span>
       </Paragraph>
       <div className=" mt-6 space-x-6 md:flex lg:mt-0">
         <Link href="/">
           {' '}
-          <Paragraph size="regular">Regulamin</Paragraph>{' '}
+          <Paragraph>Regulamin</Paragraph>{' '}
         </Link>
         <Link href="/">
-          <Paragraph size="regular">Polityka prywatności</Paragraph>
+          <Paragraph>Polityka prywatności</Paragraph>
         </Link>
       </div>
     </div>

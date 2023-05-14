@@ -14,7 +14,7 @@ export const FormatE1 = () => (
       <div className="mt-7 place-self-center md:place-self-start">
         <Button kind="primary">
           {' '}
-          <Paragraph size="regular">Poznaj format</Paragraph>
+          <Paragraph>Poznaj format</Paragraph>
         </Button>
       </div>
     </div>

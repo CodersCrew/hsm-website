@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 import { useProjectPageContext } from '@/context/projectPage.context';
 
+import { Paragraph } from '../Paragraph/Paragraph';
 import { ProjectCard } from './ProjectCard/ProjectCard';
 import { filterProjectsByHashtagsAndStatuses, filterProjectsByInput, getProjectsOnSite } from './Projects.utils';
 import { ResultBar } from './ResultBar';
@@ -33,7 +34,7 @@ export const ProjectPreviewSection = () => {
       )}
       {ifProjectsExist ? (
         <div className="flex justify-between py-8 px-8  lg:py-16 lg:px-32">
-          <p className=" w-20  " />
+          <p className="w-20 " />
           <div className="flex justify-between gap-6 text-neutral/90">
             {projectsOnForSites.map((_siteData, siteIndex) => {
               const ifDisabledButton = siteIndex === siteNumber;
@@ -43,20 +44,26 @@ export const ProjectPreviewSection = () => {
                   disabled={ifDisabledButton}
                   key={`${Math.random() * 100}`}
                 >
-                  {ifDisabledButton ? <p>{siteIndex + 1}</p> : siteIndex + 1}
+                  {ifDisabledButton ? (
+                    <Paragraph size="large" className="disabled text-[#848484]">
+                      {siteIndex + 1}
+                    </Paragraph>
+                  ) : (
+                    siteIndex + 1
+                  )}
                 </button>
               );
             })}
-          </div>{' '}
-          <p className="flex gap-1 font-bold leading-M_regular -tracking-wide text-neutral/90">
-            STARSZE{' '}
+          </div>
+          <Paragraph textBold="bold" className="flex gap-1 -tracking-wide text-neutral/90">
+            STARSZE
             <Image
               src="/images/projects/arrow_forward_black.svg"
               width={20}
               height={20}
               alt="Look for older projects"
             />
-          </p>
+          </Paragraph>
         </div>
       ) : null}
     </section>

@@ -8,7 +8,7 @@ export const Projects = () => (
       <div>carousel</div>
 
       <Button kind="primary" className="">
-        <Paragraph size="regular">Zobacz więcej</Paragraph>
+        <Paragraph>Zobacz więcej</Paragraph>
       </Button>
     </div>
   </section>

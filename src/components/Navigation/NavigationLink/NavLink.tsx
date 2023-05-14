@@ -1,5 +1,7 @@
 import Link from 'next/link';
 
+import { Paragraph } from '@/components/Paragraph/Paragraph';
+
 interface NavigationLinkProps {
   text: string;
   path: string;
@@ -8,6 +10,6 @@ interface NavigationLinkProps {
 
 export const NavigationLink = ({ path, text, handleClick }: NavigationLinkProps) => (
   <Link href={path} onClick={handleClick}>
-    <li className="whitespace-nowrap p-2 text-base text-neutral/80">{text}</li>
+    <li className="whitespace-nowrap p-2 text-neutral/80"><Paragraph>{text}</Paragraph></li>
   </Link>
 );
