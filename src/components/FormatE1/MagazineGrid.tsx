@@ -3,6 +3,8 @@ import Image from 'next/image';
 import ArrowBlack from '@/common/assets/icons/arrow_black.svg';
 import ArrowGreen from '@/common/assets/icons/arrow_green.svg';
 
+import { Paragraph } from '../Paragraph/Paragraph';
+
 const magazines = [
   {
     id: 1,
@@ -39,9 +41,10 @@ export const MagazineGrid = () => (
         <div className="w-[180px]  bg-neutral/10 shadow-lg" key={magazine.id}>
           <Image src={magazine.src} width={180} height={180} alt={magazine.alt} />
           <div className="flex p-2 text-sm">
-            <p>Format E1 - {magazine.name}</p>
+            <Paragraph size="small">Format E1 - {`"${magazine.name}"`}</Paragraph>
             <div className="flex cursor-pointer items-center p-2 text-base font-bold text-primary/60">
-              Czytaj <Image src={ArrowGreen} width={15} height={15} alt="Strzałka" className="ml-1" />
+              <Paragraph textBold="bold">Czytaj</Paragraph>{' '}
+              <Image src={ArrowGreen} width={20} height={20} alt="Strzałka" className="ml-1" />
             </div>
           </div>
         </div>
@@ -49,9 +52,9 @@ export const MagazineGrid = () => (
     </div>
 
     <div className="mt-12 hidden justify-end text-2xl lg:flex">
-      <span className="flex cursor-pointer">
-        Zobacz wszystkie <Image src={ArrowBlack} width={20} height={20} alt="Strzałka" className="ml-1" />
-      </span>
+      <h3 className="flex cursor-pointer">
+        Zobacz wszystkie <Image src={ArrowBlack} width={24} height={20} alt="Strzałka" className="ml-1" />
+      </h3>
     </div>
   </div>
 );

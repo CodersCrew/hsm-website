@@ -5,16 +5,17 @@ import GreenArrowIcon from '@/common/assets/icons/arrow_green.svg';
 import FacebookIcon from '@/common/assets/icons/facebook_transparent.svg';
 import InstagramIcon from '@/common/assets/icons/instagram_transparent.svg';
 import MailIcon from '@/common/assets/icons/mail_transparent.svg';
+import { Paragraph } from '@/components/Paragraph/Paragraph';
 
 const ContactPage = () => (
   <section className="mx-auto max-w-7xl px-9 py-16">
     <div className="mb-16 flex justify-between">
       <div className="space-y-2">
         <h2>Adres</h2>
-        <p>ul. Łukasza Górnickiego 22</p>
-        <p>50-377 Wrocław</p>
-        <p>Akademik T4 &quot;Czworak&quot;</p>
-        <p>Wejście od strony północnej, drzwi nad przedszkolem</p>
+        <Paragraph size='large'>ul. Łukasza Górnickiego 22</Paragraph>
+        <Paragraph size='large'>50-377 Wrocław</Paragraph>
+        <Paragraph size='large'>Akademik T4 &quot;Czworak&quot;</Paragraph>
+        <Paragraph size='large'>Wejście od strony północnej, drzwi nad przedszkolem</Paragraph>
         <Link href="/" className="flex w-max items-center text-primary/60 lg:hidden">
           Zobacz na mapie <Image src={GreenArrowIcon} height={15} width={15} alt="arrow icon" className="my-4 ml-2" />
         </Link>
@@ -30,7 +31,7 @@ const ContactPage = () => (
       />
     </div>
     <div>
-      <h3 className="my-4 text-2xl lg:text-primary/60">Zapraszamy do kontaktu</h3>
+      <h3 className="my-4 lg:text-primary/60">Zapraszamy do kontaktu</h3>
       <div className="flex space-x-10">
         <Link href="https://www.facebook.com/HumanizacjaSrodowiskaMiejskiego/" target="_blank">
           <Image src={FacebookIcon} height={24} width={24} alt="facebook icon" />

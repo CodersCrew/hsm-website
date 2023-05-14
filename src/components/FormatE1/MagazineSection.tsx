@@ -11,8 +11,8 @@ export const MagazineSection = () => (
     <div className="sm:hidden">
       <Image src="/images/format-e1/formaty.png" width={400} height={400} alt="czasopismo" className="w-full" />
       <Button kind="primary" className="mx-auto mt-8 flex items-center">
-        Zobacz wszystkie
-        <Image src={WhiteArrowIcon} width={16} height={16} alt="arrow" className="ml-4" />
+        <h3>Zobacz wszystkie</h3>
+        <Image src={WhiteArrowIcon} width={24} height={20} alt="arrow" className="ml-4" />
       </Button>
     </div>
     <div className="mx-auto hidden max-w-screen-xl px-4 sm:block">
@@ -25,10 +25,11 @@ export const MagazineSection = () => (
             height={530}
             alt="czasopismo"
           />
-          <div className="my-8 flex items-center justify-between text-2xl">
-            Format E1 - &quote;Percepcja&quote;
-            <div className="flex cursor-pointer items-center p-2 text-base text-2xl font-bold text-primary/60">
-              Czytaj <Image src={ArrowGreen} width={15} height={15} alt="Strzałka" className="ml-1" />
+          <div className="my-8 flex items-center justify-between px-4">
+            <h3>Format E1 - {`"Percepcja"`}</h3>
+            <div className="flex cursor-pointer items-center p-2 ">
+              <h3 className="text-primary/60">Czytaj </h3>{' '}
+              <Image src={ArrowGreen} width={15} height={15} alt="Strzałka" className="ml-1" />
             </div>
           </div>
         </div>

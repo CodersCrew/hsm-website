@@ -1,8 +1,9 @@
 import Image from 'next/image';
 import { FC, PropsWithChildren } from 'react';
 
-import { HashtagProps } from './Hashtag.types';
 import { Paragraph } from '@/components/Paragraph/Paragraph';
+
+import { HashtagProps } from './Hashtag.types';
 
 const Hashtag: FC<PropsWithChildren<HashtagProps>> = ({
   variant,
