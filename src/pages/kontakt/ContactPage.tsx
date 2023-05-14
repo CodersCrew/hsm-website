@@ -12,10 +12,10 @@ const ContactPage = () => (
     <div className="mb-16 flex justify-between">
       <div className="space-y-2">
         <h2>Adres</h2>
-        <Paragraph size='large'>ul. Łukasza Górnickiego 22</Paragraph>
-        <Paragraph size='large'>50-377 Wrocław</Paragraph>
-        <Paragraph size='large'>Akademik T4 &quot;Czworak&quot;</Paragraph>
-        <Paragraph size='large'>Wejście od strony północnej, drzwi nad przedszkolem</Paragraph>
+        <Paragraph size="large">ul. Łukasza Górnickiego 22</Paragraph>
+        <Paragraph size="large">50-377 Wrocław</Paragraph>
+        <Paragraph size="large">Akademik T4 &quot;Czworak&quot;</Paragraph>
+        <Paragraph size="large">Wejście od strony północnej, drzwi nad przedszkolem</Paragraph>
         <Link href="/" className="flex w-max items-center text-primary/60 lg:hidden">
           Zobacz na mapie <Image src={GreenArrowIcon} height={15} width={15} alt="arrow icon" className="my-4 ml-2" />
         </Link>

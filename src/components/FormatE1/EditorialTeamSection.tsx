@@ -12,14 +12,16 @@ export const EditorialTeamSection = () => (
       <div className="bg-neutral/20 py-8 px-4">
         <div className="space-y-4 md:max-w-2xl lg:space-y-8">
           <h2 className="mb-8">O Nas</h2>
-          <Paragraph size='large'>Format E1 jest studenckim czasopismem popularnonaukowym wydawanym od maja 2019 roku.</Paragraph>
-          <Paragraph size='large'>
+          <Paragraph size="large">
+            Format E1 jest studenckim czasopismem popularnonaukowym wydawanym od maja 2019 roku.
+          </Paragraph>
+          <Paragraph size="large">
             Czasopismo jest przestrzenią dla wszystkich studentów, którzy swą wiedzą, pasją i zainteresowaniami chcą
             dzielić się z szerszą publicznością. Dzięki motywom przewodnim, tematyka zawarta w poszczególnych wydaniach
             jest różnorodna. Zgłębiane są zarówno dziedziny architektury i urbanistyki, jak również sztuki, budownictwa
             czy designu.
           </Paragraph>
-          <Paragraph size='large'>
+          <Paragraph size="large">
             Skupiamy się nie tylko na studentach z Politechniki Wrocławskiej, ale też osobach z innych uczelni wyższych
             w Polsce i zza granicy.
           </Paragraph>

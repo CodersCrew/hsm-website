@@ -128,7 +128,8 @@ const JoinUsPage = () => (
               <h2>{card.title}</h2>
               <Paragraph className="my-6">{card.description}</Paragraph>
               <Link href="/" className="flex items-center text-base">
-                <Paragraph textBold='semibold'>Wypełnij zgłoszenie </Paragraph> <Image src={ArrowBlack} alt="arrow" className="ml-2" />
+                <Paragraph textBold="semibold">Wypełnij zgłoszenie </Paragraph>{' '}
+                <Image src={ArrowBlack} alt="arrow" className="ml-2" />
               </Link>
             </div>
           </div>
