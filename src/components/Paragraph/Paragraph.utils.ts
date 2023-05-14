@@ -7,7 +7,7 @@ type PSizeVariant = (typeof pSizes)[number];
 export type ParagraphProps = { size: PSizeVariant } & HTMLAttributes<HTMLParagraphElement>;
 
 export const ParagraphClasses: { [key in PSizeVariant]: string } = {
-  large: 'text-S_regular  leading-S_regular',
-  regular: 'text-M_regular  leading-M_regular',
-  small: 'text-L_regular  leading-L_regular',
+  large: 'text-L_regular font-normal  leading-L_regular',
+  regular: 'text-M_regular font-normal leading-M_regular',
+  small: 'text-S_regular font-normal leading-S_regular',
 };

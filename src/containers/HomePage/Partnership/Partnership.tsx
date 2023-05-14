@@ -34,7 +34,7 @@ export const Partnership = () => (
     </div>
 
     <div className="mt-10 flex flex-col px-4 lg:px-14 xl:px-0">
-      <h2 className="mt-6 pb-5 text-[28px] font-semibold text-neutral/90 md:text-[36px]">Współpracowali z nami</h2>
+      <h2 className="mt-6 pb-5 text-neutral/90 ">Współpracowali z nami</h2>
       <div className="mb-10 flex justify-between">
         <Image src={Rectangle} width={64} height={64} alt="rectangle" />
         <Image src={Rectangle} width={64} height={64} alt="rectangle" />
