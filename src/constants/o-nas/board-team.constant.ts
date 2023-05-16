@@ -58,4 +58,12 @@ export const boardTeamImagesData: BoardTeamArray = [
     name: 'Agata Jasiolek',
     background: "bg-[url('/images/o-nas/zarzad/agata_jasiolek_background.png')]",
   },
+  {
+    id: 7,
+    src: '/images/o-nas/zarzad/agata_jasiolek.png',
+    alt: 'Członek zarządu',
+    title: 'Członek zarządu',
+    name: 'Agata Jasiolek',
+    background: "bg-[url('/images/o-nas/zarzad/agata_jasiolek_background.png')]",
+  },
 ];
