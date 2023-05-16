@@ -35,7 +35,7 @@ export const Header = () => {
             Dowiedz się więcej
           </Paragraph>
         </Button>
-        <button className="mx-auto mb-3" onClick={handleClickScroll}>
+        <button className="mx-auto mb-3 animate-pulse" onClick={handleClickScroll}>
           <Image src={Arrow} width={23} height={50} alt="Strzałka do kolejnej sekcji" />
         </button>
       </div>
