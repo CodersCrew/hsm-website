@@ -22,7 +22,7 @@ const imagesData = [
 ];
 
 export const WhoWeAre = () => (
-  <section className="mx-auto mt-[94px] xl:max-w-[1200px]  ">
+  <section className="mx-auto mt-[94px] xl:max-w-[1200px]" id="whoWeAre">
     <div className="mx-4 flex lg:mx-14 xl:mx-0">
       <div className="lg:pr-16 xl:pr-32">
         <div>
