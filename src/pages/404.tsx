@@ -8,7 +8,7 @@ const Custom404Page = () => (
     <div className="flex items-center justify-center">
       <Image src="/images/404/404_image.svg" alt="Zagubiony człowiek" width={410} height={280} />
     </div>
-    <div className=" flex flex-col gap-4 items-center">
+    <div className=" flex flex-col items-center gap-4">
       <h1 className="text-primary/60 lg:text-4xl">Ups...coś poszło nie tak!</h1>
       <Paragraph>
         Możliwe, że w adresie URL jest literówka, dana zawartość już przestała już istnieć lub adres URL został
