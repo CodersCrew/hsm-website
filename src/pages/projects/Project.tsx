@@ -11,8 +11,11 @@ const ProjectPage = () => (
       header={projectsTexts.topSection.header}
       description={projectsTexts.topSection.paragraph}
     >
-      <LinkButton href="/" className="relative mt-8 w-[147px] bg-primary/20 py-2 px-6 text-neutral/90 md:flex">
-        <Paragraph className="z-10">Dołącz do nas</Paragraph>
+      <LinkButton
+        href="/"
+        className="relative mt-8 w-[147px] bg-primary/20 py-2 px-6 text-neutral/90 md:flex md:justify-center"
+      >
+        <Paragraph className="z-10 whitespace-nowrap">Dołącz do nas</Paragraph>
         <div className="absolute top-2 left-2 hidden h-full w-full rounded-20 border-2 border-solid border-primary/20 md:block" />
       </LinkButton>
     </TopSection>

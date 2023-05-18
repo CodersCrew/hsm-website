@@ -38,8 +38,11 @@ const JoinUsPage = () => (
       description="Jeśli chcesz razem z nami tworzyć projekty społeczne, badawcze, budować rzeczywiste obiekty i mieć realny wpływ na życie w mieście!"
       image={{ src: '/images/dolacz-do-nas/ekipa-hsm-600x500.png', alt: 'Ekipa HŚM' }}
     >
-      <LinkButton href="/" className="relative mt-8 w-[147px] bg-primary/20 py-2 px-6 text-neutral/90 md:flex">
-        <Paragraph className="z-10">Dołącz do nas</Paragraph>
+      <LinkButton
+        href="/"
+        className="relative mt-8 w-[147px] bg-primary/20 py-2 px-6 text-neutral/90 md:flex md:justify-center"
+      >
+        <Paragraph className="z-10 whitespace-nowrap">Dołącz do nas</Paragraph>
         <div className="absolute top-2 left-2 hidden h-full w-full rounded-20 border-2 border-solid border-primary/20 md:block" />
       </LinkButton>
     </TopSection>
@@ -47,8 +50,8 @@ const JoinUsPage = () => (
     <MainSection className="text-2xl">
       <div className="mx-auto max-w-screen-xl px-4 text-center">
         <h2 className="py-16 text-center">Dlaczego warto?</h2>
-        <div className="mb-36 grid-flow-col md:grid">
-          <div className="flex flex-col gap-10 md:mx-6">
+        <div className="mb-36 grid-flow-col justify-center gap-6 md:flex">
+          <div className="flex flex-col gap-10 md:mx-6 md:w-96 ">
             <Image
               src={GroupOfPeopleIcon}
               height={64}
@@ -60,14 +63,14 @@ const JoinUsPage = () => (
               Poznasz wiele aktywnych i twórczych osób, z którymi możesz rozwijać swoje umiejętności i pasje
             </p>
           </div>
-          <div className=" flex  flex-col gap-10 md:mx-6">
+          <div className=" flex flex-col gap-10 md:mx-6 md:w-96">
             <Image src={MagnifierIcon} height={64} width={64} alt="magnifier icon" className="mx-auto mb-8 md:mb-4" />
             <p className="text-2xl font-normal">
               Będziesz mieć okazję poznać funkcjonowanie Uczelni od zupełnie innej strony :) Jeśli lubisz organizować
               wydarzenia, kontaktować się z partnerami - również znajdziesz miejsce dla siebie
             </p>
           </div>
-          <div className="flex flex-col gap-10 md:mx-6">
+          <div className="flex flex-col gap-10 md:mx-6 md:w-96">
             <Image src={BulbIcon} height={64} width={64} alt="bulb icon" className="mx-auto mb-8 md:mb-4" />
             <p className="text-2xl font-normal">
               Weźmiesz udział w wielu różnorodnych projektach. To Ty decydujesz czy chcesz tworzyć projekty społeczne,

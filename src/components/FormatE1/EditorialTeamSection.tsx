@@ -56,7 +56,7 @@ export const EditorialTeamSection = () => (
           />
           <h5 className="bottom-0 px-2 py-4 md:absolute md:bg-neutral/90 md:bg-opacity-80 md:py-4 md:px-4 lg:py-8 lg:px-8">
             Nasza Redakcja składa się ze studentów Wydziału Architektury Politechniki Wrocławskiej. Jeśli chcesz do nas
-            dołączyć i współtworzyć czasopismo- napisz do nas :)
+            dołączyć i współtworzyć czasopismo - napisz do nas :)
           </h5>
         </div>
       </div>
