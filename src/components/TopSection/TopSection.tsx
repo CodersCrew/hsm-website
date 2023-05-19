@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import { PropsWithChildren } from 'react';
 
+import { styleObject } from '@/constants/globalStyling';
+
 interface TopSectionProps extends PropsWithChildren {
   image: {
     src: string;
@@ -19,7 +21,7 @@ export const TopSection: React.FC<TopSectionProps> = ({ description, header, ima
       <Image src={image.src} height={500} width={500} alt={image.alt} className=" h-auto w-full md:max-w-[42%]" />
       <div className="mr-10 flex flex-col gap-6 px-4 py-6 text-neutral/20 sm:py-10">
         <h1>{header}</h1>
-        <h4>{description}</h4>
+        <p className={`${styleObject.h4}`}>{description}</p>
         {children}
       </div>
     </div>
