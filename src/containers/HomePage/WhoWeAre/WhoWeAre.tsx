@@ -1,5 +1,7 @@
 import Image from 'next/image';
 
+import { Paragraph } from '@/components/Paragraph/Paragraph';
+
 import PeopleInOffice from '../../../common/assets/homePage/people-in-office.png';
 import Quotes from '../../../common/assets/homePage/quotes.png';
 import UndrawAbstract from '../../../common/assets/homePage/undraw_abstract_re_l9xy 1.png';
@@ -20,17 +22,17 @@ const imagesData = [
 ];
 
 export const WhoWeAre = () => (
-  <section className="mx-auto mt-[94px] xl:max-w-[1200px]  ">
+  <section className="mx-auto mt-[94px] xl:max-w-[1200px]" id="whoWeAre">
     <div className="mx-4 flex lg:mx-14 xl:mx-0">
       <div className="lg:pr-16 xl:pr-32">
         <div>
-          <h2 className="pb-5 text-[36px] text-neutral/90">Kim jesteśmy?</h2>
-          <p className="text-L_regular font-normal leading-L_regular tracking-wide ">
+          <h2 className="pb-5 text-neutral/90">Kim jesteśmy?</h2>
+          <Paragraph className="tracking-wide ">
             Jesteśmy Kołem Naukowym działającym przy Wydziale Architektury Politechniki Wrocławskiej. Celem Koła jest
             sprowokowanie twórczej postawy w projektowaniu, badanie relacji człowiek-środowisko i korelacji
             natura-kultura. Propagujemy społeczne, zhumanizowane podejście do architektury i wszystkich dziedzin z nią
             związanych.
-          </p>
+          </Paragraph>
         </div>
 
         <div className=" mt-12 flex flex-wrap justify-center gap-y-12 gap-x-14 px-1 sm:justify-evenly md:max-w-xl">
@@ -56,12 +58,12 @@ export const WhoWeAre = () => (
         className="absolute -top-6 left-6 opacity-30  grayscale lg:left-8 lg:-top-5 lg:grayscale-0"
       />
 
-      <h2 className=" tracking-widest lg:text-4xl">
+      <h2 className="lg:text-4xl">
         “Głównym błędem w projektowaniu jest brak zrozumienia i chęci, żeby poznać i przyswoić nowe idee. Drugą
         przeszkodą jest niechęć społeczna do robienia czegoś inaczej. Często społeczność nie aprobuje nowych projektów.
         Trzeba się przebijać przez swego rodzaju mur: krytyki, niechęci, niepewności”
       </h2>
-      <h4 className="mt-10 self-end ">prof. dr inż. arch. Zbigniew Bać</h4>
+      <h4 className="mt-10 self-end">prof. dr inż. arch. Zbigniew Bać</h4>
       <Image
         src={Quotes}
         width={81}

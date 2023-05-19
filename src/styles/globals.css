@@ -5,7 +5,6 @@
 h1 {
   @apply text-H1 font-semibold leading-H1;
 }
-
 h2 {
   @apply my-2 text-H2 font-semibold leading-H2 lg:text-4xl;
 }

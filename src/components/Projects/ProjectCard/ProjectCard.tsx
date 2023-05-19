@@ -1,5 +1,7 @@
 import Image from 'next/image';
 
+import { Paragraph } from '@/components/Paragraph/Paragraph';
+
 import { StatusTag } from '../../StatusTag';
 import Hashtag from '../Hashtag/Hashtag';
 import { ProjectCardProps } from './ProjectCard.types';
@@ -8,7 +10,7 @@ export const ProjectCard = ({ data }: ProjectCardProps) => {
   const { name, status, ifCyclical, hashtags, shortDescription, imageSRC, alt, index } = data;
   const moduloIndex = index % 2 ? 'flex-row-reverse' : 'flex-row';
   return (
-    <div className={`flex flex-col gap-10 lg:flex-row lg:gap-24 lg:px-28 ${moduloIndex} relative py-16`}>
+    <div className={`flex gap-10 lg:gap-24 lg:px-28 ${moduloIndex} relative py-16`}>
       <Image
         className="flex lg:max-h-projectImages lg:max-w-projectImages"
         src={imageSRC}
@@ -33,9 +35,11 @@ export const ProjectCard = ({ data }: ProjectCardProps) => {
         <h5 className="py-5 text-neutral/90">{shortDescription}</h5>
 
         <div>
-          <button className="flex flex-row items-center gap-1 text-M_regular font-bold leading-M_regular text-primary/90">
-            Zobacz więcej{' '}
-            <Image src="/images/projects/arrow_forward_green.svg" width={20} height={20} alt="arrow icon" />{' '}
+          <button className="flex flex-row items-center gap-1  ">
+            <Paragraph textBold="bold" className="text-primary/90">
+              Zobacz więcej
+            </Paragraph>
+            <Image src="/images/projects/arrow_forward_green.svg" width={20} height={20} alt="arrow icon" />
           </button>
         </div>
       </div>

@@ -1,5 +1,7 @@
 import Image, { StaticImageData } from 'next/image';
 
+import { Paragraph } from '@/components/Paragraph/Paragraph';
+
 type ImageContainerProps = {
   src: StaticImageData;
   altSrc: string;
@@ -7,9 +9,11 @@ type ImageContainerProps = {
 };
 
 const ImagesContainer = ({ src, altSrc, content }: ImageContainerProps) => (
-  <div className="flex max-w-[145px] flex-col">
+  <div className="flex max-w-[145px] flex-col gap-2">
     <Image src={src} alt={altSrc} height={100} width={160} />
-    <p className="mt-3 text-center text-L_regular font-normal leading-L_regular">{content}</p>
+    <Paragraph size="large" className="mt-3 text-center">
+      {content}
+    </Paragraph>
   </div>
 );
 

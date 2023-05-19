@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { useState } from 'react';
 
+import { Paragraph } from '@/components/Paragraph/Paragraph';
 import { STATUS_OPTIONS } from '@/components/StatusTag/StatusTag.utils';
 import { ProjectContextValues, useProjectPageContext } from '@/context/projectPage.context';
 
@@ -85,7 +86,7 @@ export const SearchBar = () => {
                               textColor={textColor}
                               borderColor={borderColor}
                               bgColor={bgColor}
-                              className="flex items-center justify-center rounded-full py-2 px-4 text-M_regular font-semibold leading-M_regular"
+                              className="flex items-center justify-center rounded-full py-2 px-4 "
                             >
                               {ifFilterSelected ? (
                                 <Image
@@ -106,7 +107,7 @@ export const SearchBar = () => {
                             textColor={textColor}
                             borderColor={borderColor}
                             bgColor={bgColor}
-                            className="flex items-center justify-center rounded-full py-2 px-4 text-M_regular font-semibold leading-M_regular"
+                            className="flex items-center justify-center rounded-full py-2 px-4 "
                           >
                             {ifFilterSelected ? (
                               <Image
@@ -159,10 +160,12 @@ export const SearchBar = () => {
               </div>
               <div className="manageFiltersContainer flex justify-between">
                 <button onClick={handleFiltersReset}>
-                  <p className="font-bold underline">Resetuj filtry</p>
+                  <Paragraph textBold="bold" className="underline">
+                    Resetuj filtry
+                  </Paragraph>
                 </button>
                 <Button kind="primary" textColor="neutral/20" onClick={handleFiltersSelect}>
-                  Zatwierdź
+                  <Paragraph> Zatwierdź</Paragraph>
                 </Button>
               </div>
             </div>

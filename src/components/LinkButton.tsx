@@ -10,7 +10,7 @@ interface LinkButtonProps {
 const LinkButton = ({ href, children, className }: LinkButtonProps) => (
   <Link
     href={href}
-    className={`rounded-20 bg-primary/90 py-3 px-12 text-neutral/20 ${className} inline-block text-center`}
+    className={`rounded-20 bg-primary/90 py-3 px-12  text-neutral/20 ${className} text-center`}
     target="_blank"
   >
     {children}
